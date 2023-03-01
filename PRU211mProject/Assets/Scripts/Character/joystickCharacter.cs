@@ -25,5 +25,11 @@ public class joystickCharacter : MonoBehaviour
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + move * moveSpeed * Time.fixedDeltaTime);
+        if(rb.transform.position.x > 8 && move.x > 0)
+        {
+            move.x = 0;
+            move.y = 0;
+            return;
+        }
     }
 }
