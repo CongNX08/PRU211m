@@ -17,39 +17,42 @@ public class SpawnGun : MonoBehaviour
     GameObject Gun4;
 
     GameObject GunX;
-    int numberOfGun = 0;
-    float X;
-    float Y;
+    int max = 5;
 
     float P1;
     float P2;
     float P3;
     float P4;
+    int count = 1;
 
     // Start is called before the first frame update
     public void Start()
     {
         timers = GetComponent<Timer>();
-        timers.arlarmTime = 1;
-       
-        //timers.StartTime();
+        timers.arlarmTime = 10;
+        timers.StartTime();
     }
 
     // Update is called once per frame
     public void Update()
     {
-       
         P1 = -0.3333f * Time.time + 50;
         P2 = P1 + 30;
         P3 = P2 + 0.1666f * Time.time + 15;
         P4 = P3 + 0.1666f * Time.time + 5;
 
-     
 
-        if (numberOfGun <= 3)
+
+        if (count <= max)
         {
             GunSpawn();
-            numberOfGun++;
+            count++;
+        }
+        if(timers.isFinish)
+        {
+            max++;
+            timers.arlarmTime = 10;
+            timers.StartTime();
         }
     }
 
@@ -66,32 +69,31 @@ public class SpawnGun : MonoBehaviour
     public void GunSpawn()
     {
         Bounds bounds = OrthographicBounds(Camera.main);
-            X = Random.Range(bounds.min.x, bounds.max.x);
-            Y = Random.Range(bounds.min.y, bounds.max.y);
-            int random = Random.Range(0, 101);
-            Debug.Log(random);
-            if(random <= P1)
-            {
+        float X = Random.Range(bounds.min.x, bounds.max.x);
+        float Y = Random.Range(bounds.min.y, bounds.max.y);
+        int random = Random.Range(0, 101);
+        Debug.Log(random);
+        if (random <= P1)
+        {
             GunX = Gun1;
-              
-            }
-            else if (random > P1 && random <= P2 )
-            {
+
+        }
+        else if (random > P1 && random <= P2)
+        {
             GunX = Gun2;
         }
-            else if (random > P2 && random <= P3 )
-            {
+        else if (random > P2 && random <= P3)
+        {
             GunX = Gun3;
         }
-            else if (random > P3 && random <= P4)
-            {
+        else if (random > P3 && random <= P4)
+        {
             GunX = Gun4;
         }
         GameObject obj = Instantiate(GunX, new Vector2(X, Y), Quaternion.identity);
         int size = Random.Range(1, 4);
         obj.transform.localScale = new Vector3(size, size, 1f);
-        //timers.arlarmTime = 2;
-        //timers.StartTime();
+       
 
     }
 
