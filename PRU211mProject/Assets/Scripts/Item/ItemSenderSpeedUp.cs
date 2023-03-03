@@ -9,23 +9,16 @@ public class ItemSenderSpeedUp : MonoBehaviour
     void Start()
     {
         timer = GetComponent<Timer>();
-        timer.arlarmTime = 0;
-        // timer.StartTime();
+        timer.arlarmTime = 30f;
+        timer.StartTime();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(timer.arlarmTime!= 0){
-            timer.StartTime();
-            Debug.Log(timer.elapseTime)
-;        }
-        // if (timer.isFinish)
-        // {
-        //     Debug.Log(timer.elapseTime);
-        //     // timer.arlarmTime = 5;
-        //     // timer.StartTime();
-        // }
+       if(timer.isFinish){
+        Destroy(this.gameObject);
+       }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -33,11 +26,9 @@ public class ItemSenderSpeedUp : MonoBehaviour
         {
             ReviceItems ri = other.GetComponent<ReviceItems>();
             ri.ReciveItemSpeedUp(5f);
-            // Debug.Log("đây là elapsetime"+timer.elapseTime);
-            timer.arlarmTime = 5;
-            // timer.StartTime();
-            // Debug.Log("đây là arlarm tiem"+timer.arlarmTime);
+          
             Destroy(gameObject);
         }
     }
+
 }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7783135163436642273}
   - component: {fileID: -7547940256727436578}
   - component: {fileID: 929475035751979569}
+  - component: {fileID: 5496509939265034135}
   m_Layer: 0
   m_Name: ItemPet
   m_TagString: Untagged
@@ -100,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 4222237590401541711, guid: ba9d0941f3dc54e4a91f4e9c40130f6d, type: 3}
   isTarget: 0
+  bulletPrefab: {fileID: 7555707781540781460, guid: 06068dc2399e9024782c2c76c02a7fb7, type: 3}
 --- !u!61 &929475035751979569
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -126,3 +128,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5496509939265034135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6951315628977175564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb18cf728f93ea0488c7e9ccf8a96439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRunning: 0
+  isFinish: 0
+  elapseTime: 0
+  arlarmTime: 0

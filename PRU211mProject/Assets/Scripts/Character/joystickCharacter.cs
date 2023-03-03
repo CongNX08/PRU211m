@@ -10,8 +10,6 @@ public class joystickCharacter : MonoBehaviour
     Vector2 move;
     public float moveSpeed;
     public bool armor = false;
-    public float timeSpawn = 0;
-    public float timeDlay = 0;
 
 
     void Start()
@@ -24,24 +22,6 @@ public class joystickCharacter : MonoBehaviour
     {
         move.x = Joystick.Horizontal;
         move.y = Joystick.Vertical;
-        if (moveSpeed > 10)
-        {
-            // timer.arlarmTime = 5;
-            // timer.StartTime();
-            // if(timer.isFinish){
-            //     this.moveSpeed=10;
-            // }
-
-            this.timeSpawn += Time.deltaTime;
-            if (this.timeSpawn < this.timeDlay) return;
-            else
-            {
-                // this.timeSpawn = 0;
-                Debug.Log(this.timeSpawn);
-                // moveSpeed=10;
-                this.setSpeed(10);
-            }
-        }   
     }
     void FixedUpdate()
     {

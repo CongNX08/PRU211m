@@ -5,16 +5,22 @@ using UnityEngine;
 public class ItemSenderArmor : MonoBehaviour
 {
     // Start is called before the first frame update
-    float x=  1/3;
+    Timer timer;
+    // public List<GameObject> items;
     void Start()
     {
-        
+        timer = GetComponent<Timer>();
+        timer.arlarmTime = 30f;
+        timer.StartTime();
+        // this.items = new List<GameObject>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(x);
+        if(timer.isFinish){
+            Destroy(this.gameObject);
+        }
     }
      private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.CompareTag("Player")){ 
