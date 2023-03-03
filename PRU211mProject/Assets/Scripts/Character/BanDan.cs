@@ -27,7 +27,7 @@ public class BanDan : MonoBehaviour
     {
         if (isColliding)
         {
-            GameObject[] walkers = GameObject.FindGameObjectsWithTag("Player");
+            GameObject[] walkers = GameObject.FindGameObjectsWithTag("Enemy");
 
             Vector2 closestWalkerDirection = Vector2.zero;
             float closestDistance = Mathf.Infinity;
