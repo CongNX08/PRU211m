@@ -8,6 +8,7 @@ public class Timer : MonoBehaviour
     public bool isFinish;
     public float elapseTime;
     public float arlarmTime;
+  
     // Start is called before the first frame update
     void Start()
     {
