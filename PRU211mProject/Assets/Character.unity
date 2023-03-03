@@ -726,7 +726,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb18cf728f93ea0488c7e9ccf8a96439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   Joystick: {fileID: 400302489}
   moveSpeed: 10
 --- !u!61 &1599689550
@@ -767,13 +766,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb18cf728f93ea0488c7e9ccf8a96439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-=======
->>>>>>> dev
   isRunning: 0
   isFinish: 0
   elapseTime: 0
   arlarmTime: 0
-<<<<<<< HEAD
 --- !u!114 &1599689552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -787,8 +783,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1278107814185478346, guid: d3523064f5738c54ca6094c809625b9a, type: 3}
-=======
->>>>>>> dev
 --- !u!1 &1743123737
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,7 +851,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
 --- !u!1 &1890585207
 GameObject:
   m_ObjectHideFlags: 0
@@ -877,24 +870,19 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!114 &1890585208
-=======
 --- !u!1 &2053705271 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4222237590401541711, guid: ba9d0941f3dc54e4a91f4e9c40130f6d, type: 3}
   m_PrefabInstance: {fileID: 4222237589147890951}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &2053705277
->>>>>>> dev
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
   m_GameObject: {fileID: 1890585207}
-=======
   m_GameObject: {fileID: 2053705271}
->>>>>>> dev
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb18cf728f93ea0488c7e9ccf8a96439, type: 3}
@@ -904,7 +892,6 @@ MonoBehaviour:
   isFinish: 0
   elapseTime: 0
   arlarmTime: 0
-<<<<<<< HEAD
 --- !u!114 &1890585209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1069,7 +1056,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-=======
 --- !u!1001 &1664516738664278336
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1192,4 +1178,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba9d0941f3dc54e4a91f4e9c40130f6d, type: 3}
->>>>>>> dev
