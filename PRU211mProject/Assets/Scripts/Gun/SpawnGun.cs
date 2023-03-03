@@ -17,13 +17,14 @@ public class SpawnGun : MonoBehaviour
     GameObject Gun4;
 
     GameObject GunX;
-    int max = 5;
+    int maxGun = 5;
+    int count = 0;
 
     float P1;
     float P2;
     float P3;
     float P4;
-    int count = 1;
+    
 
     // Start is called before the first frame update
     public void Start()
@@ -43,14 +44,14 @@ public class SpawnGun : MonoBehaviour
 
 
 
-        if (count <= max)
+        if (count < maxGun)
         {
             GunSpawn();
             count++;
         }
         if(timers.isFinish)
         {
-            max++;
+            maxGun++;
             timers.arlarmTime = 10;
             timers.StartTime();
         }
