@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4222237590401541704}
   - component: {fileID: 4222237590401541719}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Characterprefap
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

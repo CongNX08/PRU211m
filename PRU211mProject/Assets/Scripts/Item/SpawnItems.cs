@@ -17,7 +17,7 @@ public class SpawnItems : MonoBehaviour
     private void Start()
     {
         timer = GetComponent<Timer>();
-        timer.arlarmTime = 30;
+        timer.arlarmTime = 3;
         timer.StartTime();
         this.items = new List<GameObject>();
     }
@@ -64,7 +64,7 @@ public class SpawnItems : MonoBehaviour
             item.transform.position = new Vector2(X, Y);
             items.Add(getItem);
             Debug.Log(items.Count);
-            timer.arlarmTime = 31;
+            timer.arlarmTime = 3;
             timer.StartTime();
         }
         else return;
