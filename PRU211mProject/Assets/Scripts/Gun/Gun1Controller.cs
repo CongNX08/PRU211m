@@ -12,17 +12,21 @@ public class Gun1Controller : MonoBehaviour
     public float currentHP;
     private Vector3 initialScale;
     bool isColliding = false;
+    BanDan bd;
+    Timer timers;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        timers = GetComponent<Timer>();
+        bd = GetComponent<BanDan>();
         initialScale = transform.localScale;
         radius = (int)gameObject.transform.localScale.x;
-       
-        if(radius == 1)
+
+        if (radius == 1)
         {
-            maxHP = Random.Range(1, 11);
+            maxHP = Random.Range(5, 10);
             currentHP = maxHP;
         }
         if (radius == 2)
@@ -32,7 +36,7 @@ public class Gun1Controller : MonoBehaviour
         }
         if (radius == 3)
         {
-            maxHP = Random.Range(212, 312);
+            maxHP = Random.Range(21, 31);
             currentHP = maxHP;
         }
     }
@@ -40,19 +44,7 @@ public class Gun1Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isColliding)
-        {
-            currentHP -= 1;
-            float scaleRatio = currentHP / maxHP;
-            transform.localScale = initialScale * scaleRatio;
-            //size = radio;
-            //gameObject.transform.localScale = new Vector3(size, size, 1f);
-        }
-        if (currentHP == 0)
-        {
-            Destroy(gameObject);
-
-        }
+   
     }
 
 
@@ -63,7 +55,7 @@ public class Gun1Controller : MonoBehaviour
             isColliding = true;
 
         }
-        
+
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -76,6 +68,50 @@ public class Gun1Controller : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            GameObject[] walkers = GameObject.FindGameObjectsWithTag("Enemy");
+
+            Vector2 closestWalkerDirection = Vector2.zero;
+            float closestDistance = Mathf.Infinity;
+
+            foreach (GameObject walker in walkers)
+            {
+                float distance = Vector2.Distance(transform.position, walker.transform.position);
+                if (distance < closestDistance && distance <= 10f)
+                {
+                    closestDistance = distance;
+                    closestWalkerDirection = (walker.transform.position - transform.position).normalized;
+
+                }
+            }
+            if (closestDistance <= 10f)
+            {              
+                if (timers.isFinish)
+                {
+                    currentHP -= 1;
+                    float scaleRatio = currentHP / maxHP;
+                    if(transform.localScale.x > 0.5f)
+                    {
+                        transform.localScale = initialScale * scaleRatio;
+                    }
+                    
+                    timers.arlarmTime = 0.5f;
+                    timers.StartTime();
+                }
+                if(currentHP == 0)
+                {
+                    Destroy(gameObject);
+                }
+
+            }
+
+        }
 
 
+
+    }
 }

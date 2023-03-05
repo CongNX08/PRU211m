@@ -8,15 +8,15 @@ public class BanDan : MonoBehaviour
     public GameObject bulletPrefab;
     private float bulletSpeed = 12f;
     Timer timers;
-    bool isColliding = false;
-  
+    public bool isBanDan = false;
+
 
 
 
     // Start is called before the first frame update
     public void Start()
     {
-  
+
         timers = GetComponent<Timer>();
         timers.arlarmTime = 1;
         timers.StartTime();
@@ -25,7 +25,12 @@ public class BanDan : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        if (isColliding)
+
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("USung"))
         {
             GameObject[] walkers = GameObject.FindGameObjectsWithTag("Enemy");
 
@@ -50,41 +55,23 @@ public class BanDan : MonoBehaviour
 
                 if (timers.isFinish)
                 {
+                   
                     GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
                     bullet.GetComponent<Rigidbody2D>().velocity = closestWalkerDirection * bulletSpeed;
-
                     timers.arlarmTime = 0.5f;
                     timers.StartTime();
                 }
+               
             }
         }
-
-
-
-
     }
 
+    
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
-        if (collision.CompareTag("USung"))
-        {
-            isColliding = true;
-          
+    
 
-        }
-    }
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("USung"))
-        {
-            isColliding = false;
-          
 
-        }
-    }
 
 
 
