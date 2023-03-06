@@ -1502,6 +1502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1278107814185478346, guid: d3523064f5738c54ca6094c809625b9a, type: 3}
+  isBanDan: 0
 --- !u!114 &2053705279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1812,7 +1813,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1803993424779666874, guid: 2a4cf956aff8f3145a95522875cc7afe, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+
       objectReference: {fileID: 0}
     - target: {fileID: 3719027001418484902, guid: 2a4cf956aff8f3145a95522875cc7afe, type: 3}
       propertyPath: stones
