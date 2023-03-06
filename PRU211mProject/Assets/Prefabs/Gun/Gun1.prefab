@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: -9096770620253292314}
   m_Layer: 0
   m_Name: Gun1
-  m_TagString: USung
+  m_TagString: USung1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
