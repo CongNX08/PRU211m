@@ -4,9 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - USung
+  - USung1
   - Enemy
   - Bullet1
+  - USung2
   layers:
   - Default
   - TransparentFX
