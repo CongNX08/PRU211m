@@ -21,7 +21,7 @@ public class EnemyController : MonoBehaviour
             if (heal == 0)
             {
                 Destroy(gameObject);
-                           
+                scoreManager.instance.AddPoint();
             }
 
         }
