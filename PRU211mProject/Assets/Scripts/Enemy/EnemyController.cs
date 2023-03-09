@@ -19,7 +19,7 @@ public class EnemyController : MonoBehaviour
             heal--;
 
             Destroy(collision.gameObject);
-            if (heal == 0)
+            if (heal <= 0)
             {
                 Destroy(gameObject);
                            
@@ -33,7 +33,7 @@ public class EnemyController : MonoBehaviour
             heal -= 2;
 
             Destroy(collision.gameObject);
-            if (heal == 0)
+            if (heal <= 0)
             {
                 Destroy(gameObject);
 
@@ -46,7 +46,7 @@ public class EnemyController : MonoBehaviour
             heal -= 5;
 
             Destroy(collision.gameObject);
-            if (heal == 0)
+            if (heal <= 0)
             {
                 Destroy(gameObject);
 
