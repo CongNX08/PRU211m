@@ -6,7 +6,7 @@ public class RandomStones : MonoBehaviour
 {
   public GameObject stones;
     public float spawnTime;
-    float m_spawnTime;
+    float m_spawnTime = 2f;
     void Start(){
         m_spawnTime =0;
     } 

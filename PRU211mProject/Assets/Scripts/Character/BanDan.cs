@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml;
 using UnityEngine;
 
 public class BanDan : MonoBehaviour
@@ -73,6 +74,8 @@ public class BanDan : MonoBehaviour
         {
             GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");
 
+        
+
             Vector2 closestWalkerDirection = Vector2.zero;
             float closestDistance = Mathf.Infinity;
 
@@ -83,9 +86,10 @@ public class BanDan : MonoBehaviour
                 {
                     closestDistance = distance;
                     closestWalkerDirection = (e.transform.position - transform.position).normalized;
-
+                  
                 }
             }
+          
 
             if (closestDistance <= 10f)
             {

@@ -26,10 +26,24 @@ public class EnemyController : MonoBehaviour
             }
       
         }
+
+        //bullet2
+        if (collision.CompareTag("Bullet2"))
+        {
+            heal -= 2;
+
+            Destroy(collision.gameObject);
+            if (heal == 0)
+            {
+                Destroy(gameObject);
+
+            }
+
+        }
         //bullet4
         if (collision.CompareTag("Bullet4"))
         {
-            heal -= 3;
+            heal -= 5;
 
             Destroy(collision.gameObject);
             if (heal == 0)
