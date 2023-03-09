@@ -593,7 +593,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1803993424779666874, guid: 2a4cf956aff8f3145a95522875cc7afe, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3719027001418484902, guid: 2a4cf956aff8f3145a95522875cc7afe, type: 3}
       propertyPath: stones
