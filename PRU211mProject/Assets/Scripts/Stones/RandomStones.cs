@@ -4,23 +4,29 @@ using UnityEngine;
 
 public class RandomStones : MonoBehaviour
 {
-  public GameObject stones;
-    public float spawnTime;
-    float m_spawnTime = 2f;
-    void Start(){
-        m_spawnTime =0;
-    } 
-    void Update(){
-        m_spawnTime -= Time.deltaTime;
-        if(m_spawnTime <0){
+    public GameObject stones;
+    Timer timer;
+    void Start()
+    {
+        timer = GetComponent<Timer>();
+        timer.arlarmTime = 0;
+        timer.StartTime();
+    }
+    void Update()
+    {
+        if (timer.isFinish)
+        {
             spawnBall();
-            m_spawnTime = spawnTime; 
+            timer.arlarmTime = 0.7f;
+            timer.StartTime();
         }
     }
-    public void spawnBall(){
-        Vector2 spawnPos = new Vector2(Random.Range(-40,40),22);
-        if(stones){
-            Instantiate(stones,spawnPos,Quaternion.identity);
+    public void spawnBall()
+    {
+        Vector2 spawnPos = new Vector2(Random.Range(-40, 40), 22);
+        if (stones)
+        {
+            Instantiate(stones, spawnPos, Quaternion.identity);
         }
     }
 }

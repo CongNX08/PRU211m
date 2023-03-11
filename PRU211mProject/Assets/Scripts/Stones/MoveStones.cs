@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class MoveStones : MonoBehaviour
 {
-    // Start is called before the first frame update
-    // Start is called before the first frame update
     float moveSpeed = 3f; // Tốc độ di chuyển của đối tượng
     public Vector2 targetPosition; // Vị trí đích của đối tượng
     Timer timer;
     void Start()
     {  
-        timer = GetComponent<Timer>();
-        timer.arlarmTime = 4;
-        timer.StartTime();
         targetPosition = new Vector2(Random.Range(-60, 60), -24);
     }
     void Update()
@@ -26,8 +21,8 @@ public class MoveStones : MonoBehaviour
         {
             targetPosition = new Vector2(Random.Range(-60, 60), -24);
         }
-        if (timer.isFinish)
-        {
+        if (transform.position.y <=-23)
+        {   
             Destroy(gameObject);
         }
     }
