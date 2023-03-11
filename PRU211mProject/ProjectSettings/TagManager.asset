@@ -6,8 +6,13 @@ TagManager:
   tags:
   - USung1
   - Enemy
-  - Bullet1
   - USung2
+  - USung3
+  - USung4
+  - Bullet1
+  - Bullet2
+  - Bullet3
+  - Bullet4
   layers:
   - Default
   - TransparentFX
