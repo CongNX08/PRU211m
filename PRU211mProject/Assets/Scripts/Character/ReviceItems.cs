@@ -8,13 +8,23 @@ public class ReviceItems : MonoBehaviour
 
     joystickCharacter js;
     float totalSpeed;
-    private float timeSpawn = 0;
-    private float timeDlay = 5;
-    public bool hasBeenCalled = false;
-    public bool checkArmor;
+    private float timeSpawnSpeed = 0;
+    private float timeDlaySpeed = 5;
+    public float timeSpawnArmor = 0;
+    public float timeDlayArmor = 4;
+    bool hasBeenCalled = false;
+    public int checkArmor = 1;
+    public Color startColor = Color.red;
+    public Color endColor = Color.black; 
+    [Range(0,10)]
+    public float speedBlink =1;
+    Renderer ren; 
     void Start()
     {
         js = FindObjectOfType<joystickCharacter>();
+    }
+    void Awake() {
+        ren = GetComponent<Renderer>();    
     }
 
     // Update is called once per frame
@@ -22,14 +32,25 @@ public class ReviceItems : MonoBehaviour
     {
         if (hasBeenCalled == true)
         {
-            Debug.Log("đã vào hàm check");
-            this.timeSpawn += Time.deltaTime;
-            if (this.timeSpawn < this.timeDlay) return;
+            this.timeSpawnSpeed += Time.deltaTime;
+            if (this.timeSpawnSpeed < this.timeDlaySpeed) return;
             else
             {
-                this.timeSpawn = 0;
+                this.timeSpawnSpeed = 0;
                 speedReduce();
-                Debug.Log("đã vào reduce");
+            }
+        }
+        if (checkArmor == 3)
+        {
+            this.timeSpawnArmor += Time.deltaTime;
+            if (this.timeSpawnArmor < this.timeDlayArmor) {
+            ren.material.color =Color.Lerp(startColor, endColor,Mathf.PingPong(Time.time*speedBlink,1));
+            return;
+            }
+            else
+            {
+                this.timeSpawnArmor = 0;
+                immortalTime();
             }
         }
     }
@@ -37,6 +58,10 @@ public class ReviceItems : MonoBehaviour
     {
         ReciveItemSpeedUp(-5f);
         hasBeenCalled = false;
+    }
+    void immortalTime(){
+        ReciveItemArmor(false);
+        checkArmor = 1 ;
     }
     public virtual void ReciveItemSpeedUp(float spUp)
     {
@@ -48,21 +73,20 @@ public class ReviceItems : MonoBehaviour
     public virtual void ReciveItemArmor(bool armor)
     {
         js.setArmor(armor);
-        checkArmor = true;
+        checkArmor = 2;
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            if (checkArmor == true)
+            if (checkArmor == 2)
             {
-                checkArmor = false;
+                checkArmor = 3;
             }
             else
             {
                 Destroy(gameObject);
             }
-
         }
     }
 }

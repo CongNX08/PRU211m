@@ -66,6 +66,18 @@ public class EnemyController : MonoBehaviour
             }
 
         }
+        if (collision.CompareTag("BulletPet"))
+        {
+            heal -= 1;
+
+            Destroy(collision.gameObject);
+            if (heal <= 0)
+            {
+                Destroy(gameObject);
+
+            }
+
+        }
 
 
     }
