@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gun1Controller : MonoBehaviour
+public class Gun3Controller : MonoBehaviour
 {
     int radius;
     int size;
@@ -44,7 +44,7 @@ public class Gun1Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-   
+
     }
 
 
@@ -69,20 +69,20 @@ public class Gun1Controller : MonoBehaviour
                 }
             }
             if (closestDistance <= 10f)
-            {              
+            {
                 if (timers.isFinish)
                 {
-                    currentHP -= 1;
+                    currentHP -= 2;
                     float scaleRatio = currentHP / maxHP;
-                    if(transform.localScale.x > 0.5f)
+                    if (transform.localScale.x > 0.5f)
                     {
                         transform.localScale = initialScale * scaleRatio;
                     }
-                    
+
                     timers.arlarmTime = 0.5f;
                     timers.StartTime();
                 }
-                if(currentHP == 0)
+                if (currentHP == 0)
                 {
                     Destroy(gameObject);
                 }

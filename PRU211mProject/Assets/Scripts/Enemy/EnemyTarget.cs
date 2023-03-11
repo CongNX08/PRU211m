@@ -18,7 +18,7 @@ public class EnemyTarget : MonoBehaviour
 
         Vector3 distance = walkers.transform.position - transform.position;
         Vector3 targetPoint = walkers.transform.position - distance.normalized * 1;
-        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, targetPoint, 3 * Time.deltaTime);
+        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, targetPoint, 1 * Time.deltaTime);
 
     }
 }
