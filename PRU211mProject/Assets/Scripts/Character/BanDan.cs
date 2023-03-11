@@ -48,9 +48,10 @@ public class BanDan : MonoBehaviour
 
             }
         }
-
+        //Usung1
         if (collision.CompareTag("USung1"))
-        {        
+        {
+            
             if (closestDistance <= 10f)
             {
                 float angle = Mathf.Atan2(closestWalkerDirection.y, closestWalkerDirection.x) * Mathf.Rad2Deg - 90f;
@@ -62,13 +63,13 @@ public class BanDan : MonoBehaviour
                    
                     GameObject bullet = Instantiate(bullet1, transform.position, transform.rotation);
                     bullet.GetComponent<Rigidbody2D>().velocity = closestWalkerDirection * bulletSpeed;
-                    timers.arlarmTime = 0.3f;
+                    timers.arlarmTime = 0.1f;
                     timers.StartTime();
                 }
                
             }
         }
-        // U 2
+        //Usung2
         if (collision.CompareTag("USung2"))
         {
            
@@ -83,6 +84,36 @@ public class BanDan : MonoBehaviour
 
                     GameObject bullet = Instantiate(bullet2, transform.position, transform.rotation);
                     bullet.GetComponent<Rigidbody2D>().velocity = closestWalkerDirection * bulletSpeed;
+                    timers.arlarmTime = 0.3f;
+                    timers.StartTime();
+                }
+
+            }
+        }
+
+        //Usung2
+        if (collision.CompareTag("USung3"))
+        {
+            
+            Quaternion rotation1 = Quaternion.Euler(0, 0, 15);
+            Quaternion rotation2 = Quaternion.Euler(0, 0, -15);
+
+            Vector2 v2= new Vector2(3, 1);
+            if (closestDistance <= 10f)
+            {
+                float angle = Mathf.Atan2(closestWalkerDirection.y, closestWalkerDirection.x) * Mathf.Rad2Deg - 90f;
+                Quaternion lookRotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
+
+                if (timers.isFinish)
+                {
+
+                    GameObject b1 = Instantiate(bullet3, transform.position, transform.rotation);
+                    GameObject b2 = Instantiate(bullet3, transform.position, transform.rotation);
+                    GameObject b3 = Instantiate(bullet3, transform.position, transform.rotation);
+                    b1.GetComponent<Rigidbody2D>().velocity = closestWalkerDirection * bulletSpeed;
+                    b2.GetComponent<Rigidbody2D>().velocity = rotation1 * closestWalkerDirection * bulletSpeed;
+                    b3.GetComponent<Rigidbody2D>().velocity = rotation2 * closestWalkerDirection * bulletSpeed;
                     timers.arlarmTime = 0.3f;
                     timers.StartTime();
                 }
