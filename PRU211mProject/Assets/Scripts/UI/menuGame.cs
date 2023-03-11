@@ -17,7 +17,10 @@ public class menuGame : MonoBehaviour
 
     public void PlayGame()
     {
-        Play.onClick.AddListener(playBall);
+        SpanwItems.SetActive(true);
+        SpawnGun.SetActive(true);
+        SpawnEnemy.SetActive(true);
+        GenerateStones.SetActive(true);
         Time.timeScale = 1;
         text.SetActive(false);
     }
@@ -32,13 +35,5 @@ public class menuGame : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Character");
-    }
-
-    void playBall()
-    {
-        SpanwItems.SetActive(true);
-        SpawnGun.SetActive(true);
-        SpawnEnemy.SetActive(true);
-        GenerateStones.SetActive(true);
     }
 }
