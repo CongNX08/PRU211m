@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 861318728226670532}
   - component: {fileID: 3719027001418484902}
+  - component: {fileID: 8034295016549389445}
   m_Layer: 0
   m_Name: GenerateStones
   m_TagString: Untagged
@@ -45,4 +46,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stones: {fileID: 38154518460445996, guid: 8e2a01d4f309a3042b9e402192809029, type: 3}
-  spawnTime: 0
+--- !u!114 &8034295016549389445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803993424779666874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb18cf728f93ea0488c7e9ccf8a96439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRunning: 0
+  isFinish: 0
+  elapseTime: 0
+  arlarmTime: 0
