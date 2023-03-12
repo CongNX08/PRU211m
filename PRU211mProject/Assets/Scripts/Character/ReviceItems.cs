@@ -8,67 +8,101 @@ public class ReviceItems : MonoBehaviour
 
     joystickCharacter js;
     float totalSpeed;
-    private float timeSpawnSpeed = 0;
-    private float timeDlaySpeed = 5;
-    public float timeSpawnArmor = 0;
-    public float timeDlayArmor = 4;
-    bool hasBeenCalled = false;
-    public int checkArmor = 1;
-    public Color startColor = Color.red;
-    public Color endColor = Color.black; 
-    [Range(0,10)]
-    public float speedBlink =1;
-    Renderer ren; 
+    private float timeSpeedExit = 0;
+    private float timeDlaySpeedExit = 5;
+    private float timeArmorExit = 0;
+    private float timeDlayArmorExit = 4;
+    private bool checkSpeed = false;
+    private int checkArmor = 1;
+    private Color startColor = Color.red;
+    private Color endColor = Color.black;
+    [Range(0, 10)]
+    private float speedBlink = 5;
+    Renderer ren;
+    public int checkStone = 1;
+    public float timeStoneExit = 0;
+    public float timeDelayStone = 5;
+    public int checkCountStone = 0;
     void Start()
     {
         js = FindObjectOfType<joystickCharacter>();
     }
-    void Awake() {
-        ren = GetComponent<Renderer>();    
+    void Awake()
+    {
+        ren = GetComponent<Renderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (hasBeenCalled == true)
+        if (checkSpeed == true)
         {
-            this.timeSpawnSpeed += Time.deltaTime;
-            if (this.timeSpawnSpeed < this.timeDlaySpeed) return;
+            this.timeSpeedExit += Time.deltaTime;
+            if (this.timeSpeedExit < this.timeDlaySpeedExit) return;
             else
             {
-                this.timeSpawnSpeed = 0;
+                this.timeSpeedExit = 0;
                 speedReduce();
             }
         }
         if (checkArmor == 3)
         {
-            this.timeSpawnArmor += Time.deltaTime;
-            if (this.timeSpawnArmor < this.timeDlayArmor) {
-            ren.material.color =Color.Lerp(startColor, endColor,Mathf.PingPong(Time.time*speedBlink,1));
-            return;
+            this.timeArmorExit += Time.deltaTime;
+            if (this.timeArmorExit < this.timeDlayArmorExit)
+            {
+                ren.material.color = Color.Lerp(startColor, endColor, Mathf.PingPong(Time.time * speedBlink, 1));
+                return;
             }
             else
             {
-                this.timeSpawnArmor = 0;
+                this.timeArmorExit = 0;
                 immortalTime();
             }
+        }
+        if (checkStone == 2)
+        {
+            timeStoneExit += Time.deltaTime;
+            if (timeStoneExit < timeDelayStone) return;
+            else
+            {
+                timeStoneExit = 0;
+                if (checkCountStone <= 1)
+                {
+                    ReciveStone(5f);
+                }
+                else if(checkCountStone ==2)
+                {
+                     ReciveStone(10f);
+                }
+                checkStone = 1;
+            }
+
         }
     }
     void speedReduce()
     {
         ReciveItemSpeedUp(-5f);
-        hasBeenCalled = false;
+        checkSpeed = false;
     }
-    void immortalTime(){
+    void immortalTime()
+    {
         ReciveItemArmor(false);
-        checkArmor = 1 ;
+        checkArmor = 1;
     }
     public virtual void ReciveItemSpeedUp(float spUp)
     {
         totalSpeed = js.getSpeed();
         totalSpeed += spUp;
         js.setSpeed(totalSpeed);
-        hasBeenCalled = true;
+        checkSpeed = true;
+    }
+    public virtual void ReciveStone(float spUp)
+    {
+        totalSpeed = js.getSpeed();
+        totalSpeed += spUp;
+        js.setSpeed(totalSpeed);
+        checkStone = 2;
+        checkCountStone ++;
     }
     public virtual void ReciveItemArmor(bool armor)
     {

@@ -32,28 +32,26 @@ public class SpawnItems : MonoBehaviour
         float Y = Random.Range(bounds.min.y, bounds.max.y);
         if (timer.isFinish)
         {
-            // int rand = Random.Range(1, 11);
-            // if (rand < 4)
-            // {
+            int rand = Random.Range(1, 11);
+            if (rand < 4)
+            {
                 getItem = itArmor;
-            // }
-            // else if (rand > 3 && rand < 8)
-            // {
-            //     getItem = itSpeedUp;
-            // }
-            // else if (rand > 7 && rand < 11)
-            // {
-                // getItem = itPet;
-            // }
-            // else
-            // {
-            //     return;
-            // }
+            }
+            else if (rand > 3 && rand < 8)
+            {
+                getItem = itSpeedUp;
+            }
+            else if (rand > 7 && rand < 11)
+            {
+                getItem = itPet;
+            }
+            else
+            {
+                return;
+            }
 
-            // GameObject item = Instantiate(this.getItem);
             GameObject item = Instantiate(this.getItem);
-
-            // item.transform.position = new Vector2(X, Y);
+            item.transform.position = new Vector2(X, Y);
             timer.arlarmTime = 30;
             timer.StartTime();
 

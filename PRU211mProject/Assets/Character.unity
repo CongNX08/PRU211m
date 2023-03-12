@@ -599,7 +599,7 @@ PrefabInstance:
     - target: {fileID: 3719027001418484902, guid: 2a4cf956aff8f3145a95522875cc7afe, type: 3}
       propertyPath: stones
       value: 
-      objectReference: {fileID: 38154518460445996, guid: 8e2a01d4f309a3042b9e402192809029, type: 3}
+      objectReference: {fileID: 2429492751280073622, guid: 8e2a01d4f309a3042b9e402192809029, type: 3}
     - target: {fileID: 3719027001418484902, guid: 2a4cf956aff8f3145a95522875cc7afe, type: 3}
       propertyPath: spawnTime
       value: 5
@@ -869,11 +869,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 82.902985
+      value: 82.902954
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 68.399
+      value: 68.39899
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
