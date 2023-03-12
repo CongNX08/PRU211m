@@ -21,4 +21,13 @@ public class EnemyTarget : MonoBehaviour
         gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, targetPoint, 1 * Time.deltaTime);
 
     }
+        private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            // ReviceItems ri = other.GetComponent<ReviceItems>();
+            // ri.ReciveItemSpeedUp(5f);
+            Destroy(gameObject);
+        }
+    }
 }

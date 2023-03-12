@@ -1,11 +1,10 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class EnemyBossControler : MonoBehaviour
 {
-    int heal = 6;
+     int heal = 6;
     // Start is called before the first frame update
     void Start()
     {
@@ -81,12 +80,4 @@ public class EnemyController : MonoBehaviour
 
 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
 }
