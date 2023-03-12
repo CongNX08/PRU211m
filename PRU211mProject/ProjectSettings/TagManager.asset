@@ -13,6 +13,9 @@ TagManager:
   - Bullet2
   - Bullet3
   - Bullet4
+  - BulletPet
+  - SpawnEnemy
+  - Play
   layers:
   - Default
   - TransparentFX
