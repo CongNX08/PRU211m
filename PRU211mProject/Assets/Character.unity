@@ -599,34 +599,13 @@ PrefabInstance:
     - target: {fileID: 3719027001418484902, guid: 2a4cf956aff8f3145a95522875cc7afe, type: 3}
       propertyPath: stones
       value: 
-      objectReference: {fileID: 38154518460445996, guid: 8e2a01d4f309a3042b9e402192809029, type: 3}
+      objectReference: {fileID: 2429492751280073622, guid: 8e2a01d4f309a3042b9e402192809029, type: 3}
     - target: {fileID: 3719027001418484902, guid: 2a4cf956aff8f3145a95522875cc7afe, type: 3}
       propertyPath: spawnTime
       value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a4cf956aff8f3145a95522875cc7afe, type: 3}
---- !u!1 &956916910 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1803993424779666874, guid: 2a4cf956aff8f3145a95522875cc7afe, type: 3}
-  m_PrefabInstance: {fileID: 840269805}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &956916913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 956916910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb18cf728f93ea0488c7e9ccf8a96439, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isRunning: 0
-  isFinish: 0
-  elapseTime: 0
-  arlarmTime: 0
 --- !u!1 &1068550147
 GameObject:
   m_ObjectHideFlags: 0
@@ -890,11 +869,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 82.902985
+      value: 82.902954
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 68.399
+      value: 68.39899
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1940,14 +1919,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2709616065935962566, guid: 87220049f90d6a346b3b7a22fca62053, type: 3}
-      propertyPath: Enermy
-      value: 
-      objectReference: {fileID: 4562883570856944681, guid: 54c804557ab53e34d86f15a87d4d0bc1, type: 3}
     - target: {fileID: 2709616065935962561, guid: 87220049f90d6a346b3b7a22fca62053, type: 3}
       propertyPath: m_TagString
       value: SpawnEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2709616065935962566, guid: 87220049f90d6a346b3b7a22fca62053, type: 3}
+      propertyPath: Enermy
+      value: 
+      objectReference: {fileID: 4562883570856944681, guid: 54c804557ab53e34d86f15a87d4d0bc1, type: 3}
     - target: {fileID: 2709616065935962567, guid: 87220049f90d6a346b3b7a22fca62053, type: 3}
       propertyPath: m_RootOrder
       value: 8
