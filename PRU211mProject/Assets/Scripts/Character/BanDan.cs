@@ -41,7 +41,7 @@ public class BanDan : MonoBehaviour
         foreach (GameObject e in enemys)
         {
             float distance = Vector2.Distance(transform.position, e.transform.position);
-            if (distance < closestDistance && distance <= 10f)
+            if (distance < closestDistance && distance <= 15f)
             {
                 closestDistance = distance;
                 closestWalkerDirection = (e.transform.position - transform.position).normalized;
@@ -52,7 +52,7 @@ public class BanDan : MonoBehaviour
         if (collision.CompareTag("USung1"))
         {
             
-            if (closestDistance <= 10f)
+            if (closestDistance <= 15f)
             {
                 float angle = Mathf.Atan2(closestWalkerDirection.y, closestWalkerDirection.x) * Mathf.Rad2Deg - 90f;
                 Quaternion lookRotation = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -63,7 +63,7 @@ public class BanDan : MonoBehaviour
                    
                     GameObject bullet = Instantiate(bullet1, transform.position, transform.rotation);
                     bullet.GetComponent<Rigidbody2D>().velocity = closestWalkerDirection * bulletSpeed;
-                    timers.arlarmTime = 0.1f;
+                    timers.arlarmTime = 0.2f;
                     timers.StartTime();
                 }
                
@@ -73,7 +73,7 @@ public class BanDan : MonoBehaviour
         if (collision.CompareTag("USung2"))
         {
            
-            if (closestDistance <= 10f)
+            if (closestDistance <= 15f)
             {             
                 float angle = Mathf.Atan2(closestWalkerDirection.y, closestWalkerDirection.x) * Mathf.Rad2Deg - 90f;
                 Quaternion lookRotation = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -84,7 +84,7 @@ public class BanDan : MonoBehaviour
 
                     GameObject bullet = Instantiate(bullet2, transform.position, transform.rotation);
                     bullet.GetComponent<Rigidbody2D>().velocity = closestWalkerDirection * bulletSpeed;
-                    timers.arlarmTime = 0.3f;
+                    timers.arlarmTime = 0.2f;
                     timers.StartTime();
                 }
 
@@ -95,11 +95,11 @@ public class BanDan : MonoBehaviour
         if (collision.CompareTag("USung3"))
         {
             
-            Quaternion rotation1 = Quaternion.Euler(0, 0, 15);
-            Quaternion rotation2 = Quaternion.Euler(0, 0, -15);
+            Quaternion rotation1 = Quaternion.Euler(0, 0, 10);
+            Quaternion rotation2 = Quaternion.Euler(0, 0, -10);
 
             Vector2 v2= new Vector2(3, 1);
-            if (closestDistance <= 10f)
+            if (closestDistance <= 15f)
             {
                 float angle = Mathf.Atan2(closestWalkerDirection.y, closestWalkerDirection.x) * Mathf.Rad2Deg - 90f;
                 Quaternion lookRotation = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -114,7 +114,7 @@ public class BanDan : MonoBehaviour
                     b1.GetComponent<Rigidbody2D>().velocity = closestWalkerDirection * bulletSpeed;
                     b2.GetComponent<Rigidbody2D>().velocity = rotation1 * closestWalkerDirection * bulletSpeed;
                     b3.GetComponent<Rigidbody2D>().velocity = rotation2 * closestWalkerDirection * bulletSpeed;
-                    timers.arlarmTime = 0.3f;
+                    timers.arlarmTime = 0.2f;
                     timers.StartTime();
                 }
 
@@ -124,7 +124,7 @@ public class BanDan : MonoBehaviour
         //Usung4
         if (collision.CompareTag("USung4"))
         {
-            if (closestDistance <= 10f)
+            if (closestDistance <= 15f)
             {
                 float angle = Mathf.Atan2(closestWalkerDirection.y, closestWalkerDirection.x) * Mathf.Rad2Deg - 90f;
                 Quaternion lookRotation = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -135,7 +135,7 @@ public class BanDan : MonoBehaviour
 
                     GameObject bullet = Instantiate(bullet4, transform.position, transform.rotation);
                     bullet.GetComponent<Rigidbody2D>().velocity = closestWalkerDirection * bulletSpeed;
-                    timers.arlarmTime = 0.3f;
+                    timers.arlarmTime = 0.2f;
                     timers.StartTime();
                 }
 
