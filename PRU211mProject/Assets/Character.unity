@@ -606,27 +606,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a4cf956aff8f3145a95522875cc7afe, type: 3}
---- !u!1 &956916910 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1803993424779666874, guid: 2a4cf956aff8f3145a95522875cc7afe, type: 3}
-  m_PrefabInstance: {fileID: 840269805}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &956916913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 956916910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb18cf728f93ea0488c7e9ccf8a96439, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isRunning: 0
-  isFinish: 0
-  elapseTime: 0
-  arlarmTime: 0
 --- !u!1 &1068550147
 GameObject:
   m_ObjectHideFlags: 0
@@ -1788,32 +1767,6 @@ MonoBehaviour:
   isFinish: 0
   elapseTime: 0
   arlarmTime: 0
---- !u!61 &2053705285
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2053705271}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &2117067986
 GameObject:
   m_ObjectHideFlags: 0
@@ -1940,14 +1893,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2709616065935962566, guid: 87220049f90d6a346b3b7a22fca62053, type: 3}
-      propertyPath: Enermy
-      value: 
-      objectReference: {fileID: 4562883570856944681, guid: 54c804557ab53e34d86f15a87d4d0bc1, type: 3}
     - target: {fileID: 2709616065935962561, guid: 87220049f90d6a346b3b7a22fca62053, type: 3}
       propertyPath: m_TagString
       value: SpawnEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2709616065935962566, guid: 87220049f90d6a346b3b7a22fca62053, type: 3}
+      propertyPath: Enermy
+      value: 
+      objectReference: {fileID: 4562883570856944681, guid: 54c804557ab53e34d86f15a87d4d0bc1, type: 3}
     - target: {fileID: 2709616065935962567, guid: 87220049f90d6a346b3b7a22fca62053, type: 3}
       propertyPath: m_RootOrder
       value: 8
