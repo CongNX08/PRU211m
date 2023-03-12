@@ -1431,6 +1431,8 @@ MonoBehaviour:
   Gun2: {fileID: 2847351032122194539, guid: 88c91241a9759c343aaaba61b5b8c1b8, type: 3}
   Gun3: {fileID: 8038740411357990329, guid: e9cc8d910c82924499250a6e8c581a61, type: 3}
   Gun4: {fileID: 7340644049248913143, guid: 51a6c85c666a001428e9853c8d874e88, type: 3}
+  maxGun: 5
+  currentGun: 0
 --- !u!4 &1890585210
 Transform:
   m_ObjectHideFlags: 0
@@ -1749,7 +1751,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet1: {fileID: 1278107814185478346, guid: d3523064f5738c54ca6094c809625b9a, type: 3}
   bullet2: {fileID: 3021820220233099982, guid: f5314afb3d20cf849b5a3390fa72013e, type: 3}
-  bullet3: {fileID: 0}
+  bullet3: {fileID: 6334259091708705729, guid: d3e8df2a32079d8419b3f3308dcbdfe8, type: 3}
   bullet4: {fileID: 3857414899195449164, guid: 9882a12e2e08af340bef97bc44484abd, type: 3}
 --- !u!114 &2053705279
 MonoBehaviour:
