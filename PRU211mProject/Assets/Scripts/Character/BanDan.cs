@@ -34,25 +34,25 @@ public class BanDan : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");
+        Vector2 closestWalkerDirection = Vector2.zero;
+        float closestDistance = Mathf.Infinity;
+
+        foreach (GameObject e in enemys)
+        {
+            float distance = Vector2.Distance(transform.position, e.transform.position);
+            if (distance < closestDistance && distance <= 15f)
+            {
+                closestDistance = distance;
+                closestWalkerDirection = (e.transform.position - transform.position).normalized;
+
+            }
+        }
+        //Usung1
         if (collision.CompareTag("USung1"))
         {
-            GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");
-
-            Vector2 closestWalkerDirection = Vector2.zero;
-            float closestDistance = Mathf.Infinity;
-
-            foreach (GameObject e in enemys)
-            {
-                float distance = Vector2.Distance(transform.position, e.transform.position);
-                if (distance < closestDistance && distance <= 10f)
-                {
-                    closestDistance = distance;
-                    closestWalkerDirection = (e.transform.position - transform.position).normalized;
-
-                }
-            }
-           
-            if (closestDistance <= 10f)
+            
+            if (closestDistance <= 15f)
             {
                 float angle = Mathf.Atan2(closestWalkerDirection.y, closestWalkerDirection.x) * Mathf.Rad2Deg - 90f;
                 Quaternion lookRotation = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -63,37 +63,18 @@ public class BanDan : MonoBehaviour
                    
                     GameObject bullet = Instantiate(bullet1, transform.position, transform.rotation);
                     bullet.GetComponent<Rigidbody2D>().velocity = closestWalkerDirection * bulletSpeed;
-                    timers.arlarmTime = 0.3f;
+                    timers.arlarmTime = 0.2f;
                     timers.StartTime();
                 }
                
             }
         }
-        // U 2
+        //Usung2
         if (collision.CompareTag("USung2"))
         {
-            GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");
-
-        
-
-            Vector2 closestWalkerDirection = Vector2.zero;
-            float closestDistance = Mathf.Infinity;
-
-            foreach (GameObject e in enemys)
-            {
-                float distance = Vector2.Distance(transform.position, e.transform.position);
-                if (distance < closestDistance && distance <= 10f)
-                {
-                    closestDistance = distance;
-                    closestWalkerDirection = (e.transform.position - transform.position).normalized;
-                  
-                }
-            }
-          
-
-            if (closestDistance <= 10f)
-            {
-                //Vector3 Dbullet2 = new Vector3(transform.position.x + 0.5f, transform.position.y + 0.5f, transform.position.z);
+           
+            if (closestDistance <= 15f)
+            {             
                 float angle = Mathf.Atan2(closestWalkerDirection.y, closestWalkerDirection.x) * Mathf.Rad2Deg - 90f;
                 Quaternion lookRotation = Quaternion.AngleAxis(angle, Vector3.forward);
                 transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
@@ -103,7 +84,37 @@ public class BanDan : MonoBehaviour
 
                     GameObject bullet = Instantiate(bullet2, transform.position, transform.rotation);
                     bullet.GetComponent<Rigidbody2D>().velocity = closestWalkerDirection * bulletSpeed;
-                    timers.arlarmTime = 0.3f;
+                    timers.arlarmTime = 0.2f;
+                    timers.StartTime();
+                }
+
+            }
+        }
+
+        //Usung2
+        if (collision.CompareTag("USung3"))
+        {
+            
+            Quaternion rotation1 = Quaternion.Euler(0, 0, 10);
+            Quaternion rotation2 = Quaternion.Euler(0, 0, -10);
+
+            Vector2 v2= new Vector2(3, 1);
+            if (closestDistance <= 15f)
+            {
+                float angle = Mathf.Atan2(closestWalkerDirection.y, closestWalkerDirection.x) * Mathf.Rad2Deg - 90f;
+                Quaternion lookRotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
+
+                if (timers.isFinish)
+                {
+
+                    GameObject b1 = Instantiate(bullet3, transform.position, transform.rotation);
+                    GameObject b2 = Instantiate(bullet3, transform.position, transform.rotation);
+                    GameObject b3 = Instantiate(bullet3, transform.position, transform.rotation);
+                    b1.GetComponent<Rigidbody2D>().velocity = closestWalkerDirection * bulletSpeed;
+                    b2.GetComponent<Rigidbody2D>().velocity = rotation1 * closestWalkerDirection * bulletSpeed;
+                    b3.GetComponent<Rigidbody2D>().velocity = rotation2 * closestWalkerDirection * bulletSpeed;
+                    timers.arlarmTime = 0.2f;
                     timers.StartTime();
                 }
 
@@ -113,23 +124,7 @@ public class BanDan : MonoBehaviour
         //Usung4
         if (collision.CompareTag("USung4"))
         {
-            GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");
-
-            Vector2 closestWalkerDirection = Vector2.zero;
-            float closestDistance = Mathf.Infinity;
-
-            foreach (GameObject e in enemys)
-            {
-                float distance = Vector2.Distance(transform.position, e.transform.position);
-                if (distance < closestDistance && distance <= 10f)
-                {
-                    closestDistance = distance;
-                    closestWalkerDirection = (e.transform.position - transform.position).normalized;
-
-                }
-            }
-
-            if (closestDistance <= 10f)
+            if (closestDistance <= 15f)
             {
                 float angle = Mathf.Atan2(closestWalkerDirection.y, closestWalkerDirection.x) * Mathf.Rad2Deg - 90f;
                 Quaternion lookRotation = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -140,7 +135,7 @@ public class BanDan : MonoBehaviour
 
                     GameObject bullet = Instantiate(bullet4, transform.position, transform.rotation);
                     bullet.GetComponent<Rigidbody2D>().velocity = closestWalkerDirection * bulletSpeed;
-                    timers.arlarmTime = 0.3f;
+                    timers.arlarmTime = 0.2f;
                     timers.StartTime();
                 }
 
@@ -150,26 +145,8 @@ public class BanDan : MonoBehaviour
 
 
 
-    //private float FindclosestEnemy()
-    //{
-    //    GameObject[] walkers = GameObject.FindGameObjectsWithTag("Enemy");
+ 
 
-    //    Vector2 closestWalkerDirection = Vector2.zero;
-    //    float closestDistance = Mathf.Infinity;
-
-    //    foreach (GameObject walker in walkers)
-    //    {
-    //        float distance = Vector2.Distance(transform.position, walker.transform.position);
-    //        if (distance < closestDistance && distance <= 10f)
-    //        {
-    //            closestDistance = distance;
-    //            closestWalkerDirection = (walker.transform.position - transform.position).normalized;
-
-    //        }
-    //    }
-    //    return closestDistance;
-    //}
-   
 
 
 

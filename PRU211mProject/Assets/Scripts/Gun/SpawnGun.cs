@@ -17,8 +17,8 @@ public class SpawnGun : MonoBehaviour
     GameObject Gun4;
 
     GameObject GunX;
-    int maxGun = 5;
-    int count = 0;
+    public int maxGun = 5;
+    public int currentGun = 0;
 
     float P1;
     float P2;
@@ -30,7 +30,7 @@ public class SpawnGun : MonoBehaviour
     public void Start()
     {
         timers = GetComponent<Timer>();
-        timers.arlarmTime = 10;
+        timers.arlarmTime = 30;
         timers.StartTime();
     }
 
@@ -44,15 +44,15 @@ public class SpawnGun : MonoBehaviour
 
 
 
-        if (count < maxGun)
+        if (currentGun < maxGun)
         {
             GunSpawn();
-            count++;
+            currentGun++;
         }
         if(timers.isFinish)
         {
             maxGun++;
-            timers.arlarmTime = 10;
+            timers.arlarmTime = 30;
             timers.StartTime();
         }
     }
