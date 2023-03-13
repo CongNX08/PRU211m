@@ -29,7 +29,7 @@ public class BanDan : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-
+       
     }
 
     private void OnTriggerStay2D(Collider2D collision)

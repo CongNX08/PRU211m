@@ -26,17 +26,17 @@ public class Gun3Controller : MonoBehaviour
 
         if (radius == 1)
         {
-            maxHP = Random.Range(5, 10);
+            maxHP = Random.Range(5, 11);
             currentHP = maxHP;
         }
         if (radius == 2)
         {
-            maxHP = Random.Range(11, 21);
+            maxHP = Random.Range(11, 16);
             currentHP = maxHP;
         }
         if (radius == 3)
         {
-            maxHP = Random.Range(21, 31);
+            maxHP = Random.Range(16, 21);
             currentHP = maxHP;
         }
     }

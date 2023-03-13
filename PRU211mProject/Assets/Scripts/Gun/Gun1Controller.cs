@@ -5,14 +5,11 @@ using UnityEngine;
 public class Gun1Controller : MonoBehaviour
 {
     int radius;
-    int size;
     [SerializeField]
 
     public float maxHP;
     public float currentHP;
     private Vector3 initialScale;
-    bool isColliding = false;
-    BanDan bd;
     Timer timers;
     SpawnGun sg;
 
@@ -21,7 +18,6 @@ public class Gun1Controller : MonoBehaviour
     void Start()
     {
         timers = GetComponent<Timer>();
-        bd = GetComponent<BanDan>();
         initialScale = transform.localScale;
         radius = (int)gameObject.transform.localScale.x;
         sg = FindObjectOfType<SpawnGun>();
@@ -46,7 +42,6 @@ public class Gun1Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-   
     }
 
 
@@ -56,8 +51,6 @@ public class Gun1Controller : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             GameObject[] walkers = GameObject.FindGameObjectsWithTag("Enemy");
-
-            Vector2 closestWalkerDirection = Vector2.zero;
             float closestDistance = Mathf.Infinity;
 
             foreach (GameObject walker in walkers)
@@ -65,9 +58,7 @@ public class Gun1Controller : MonoBehaviour
                 float distance = Vector2.Distance(transform.position, walker.transform.position);
                 if (distance < closestDistance && distance <= 10f)
                 {
-                    closestDistance = distance;
-                    closestWalkerDirection = (walker.transform.position - transform.position).normalized;
-
+                    closestDistance = distance;               
                 }
             }
             if (closestDistance <= 10f)
