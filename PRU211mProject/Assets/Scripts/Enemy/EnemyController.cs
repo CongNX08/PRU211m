@@ -36,6 +36,19 @@ public class EnemyController : MonoBehaviour
             if (heal <= 0)
             {
                 Destroy(gameObject);
+                scoreManager.instance.AddPoint();
+            }
+
+        }
+        //bullet3
+        if (collision.CompareTag("Bullet3"))
+        {
+            heal -= 3;
+
+            Destroy(collision.gameObject);
+            if (heal <= 0)
+            {
+                Destroy(gameObject);
 
             }
 
@@ -49,7 +62,7 @@ public class EnemyController : MonoBehaviour
             if (heal <= 0)
             {
                 Destroy(gameObject);
-
+                scoreManager.instance.AddPoint();
             }
 
         }
@@ -61,7 +74,7 @@ public class EnemyController : MonoBehaviour
             if (heal <= 0)
             {
                 Destroy(gameObject);
-
+                scoreManager.instance.AddPoint();
             }
 
         }

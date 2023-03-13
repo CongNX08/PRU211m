@@ -14,6 +14,7 @@ public class Gun4Controller : MonoBehaviour
     bool isColliding = false;
     BanDan bd;
     Timer timers;
+    SpawnGun sg;
 
 
     // Start is called before the first frame update
@@ -23,6 +24,7 @@ public class Gun4Controller : MonoBehaviour
         bd = GetComponent<BanDan>();
         initialScale = transform.localScale;
         radius = (int)gameObject.transform.localScale.x;
+        sg = FindObjectOfType<SpawnGun>();
 
         if (radius == 1)
         {
@@ -74,7 +76,7 @@ public class Gun4Controller : MonoBehaviour
                 {
                     currentHP -= 1;
                     float scaleRatio = currentHP / maxHP;
-                    if (transform.localScale.x > 0.5f)
+                    if (transform.localScale.x > 0.7f)
                     {
                         transform.localScale = initialScale * scaleRatio;
                     }
@@ -82,9 +84,10 @@ public class Gun4Controller : MonoBehaviour
                     timers.arlarmTime = 0.5f;
                     timers.StartTime();
                 }
-                if (currentHP == 0)
+                if (currentHP <= 0)
                 {
                     Destroy(gameObject);
+                    sg.currentGun--;
                 }
 
             }
