@@ -70,7 +70,7 @@ public class Gun4Controller : MonoBehaviour
 
                 }
             }
-            if (closestDistance <= 10f)
+            if (closestDistance <= 12f)
             {
                 if (timers.isFinish)
                 {
@@ -81,7 +81,7 @@ public class Gun4Controller : MonoBehaviour
                         transform.localScale = initialScale * scaleRatio;
                     }
 
-                    timers.arlarmTime = 0.5f;
+                    timers.arlarmTime = 0.2f;
                     timers.StartTime();
                 }
                 if (currentHP <= 0)

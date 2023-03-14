@@ -52,7 +52,7 @@ public class BanDan : MonoBehaviour
         if (collision.CompareTag("USung1"))
         {
             
-            if (closestDistance <= 15f)
+            if (closestDistance <= 12f)
             {
                 float angle = Mathf.Atan2(closestWalkerDirection.y, closestWalkerDirection.x) * Mathf.Rad2Deg - 90f;
                 Quaternion lookRotation = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -73,7 +73,7 @@ public class BanDan : MonoBehaviour
         if (collision.CompareTag("USung2"))
         {
            
-            if (closestDistance <= 15f)
+            if (closestDistance <= 12f)
             {             
                 float angle = Mathf.Atan2(closestWalkerDirection.y, closestWalkerDirection.x) * Mathf.Rad2Deg - 90f;
                 Quaternion lookRotation = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -99,7 +99,7 @@ public class BanDan : MonoBehaviour
             Quaternion rotation2 = Quaternion.Euler(0, 0, -10);
 
             Vector2 v2= new Vector2(3, 1);
-            if (closestDistance <= 15f)
+            if (closestDistance <= 12f)
             {
                 float angle = Mathf.Atan2(closestWalkerDirection.y, closestWalkerDirection.x) * Mathf.Rad2Deg - 90f;
                 Quaternion lookRotation = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -124,7 +124,7 @@ public class BanDan : MonoBehaviour
         //Usung4
         if (collision.CompareTag("USung4"))
         {
-            if (closestDistance <= 15f)
+            if (closestDistance <= 12f)
             {
                 float angle = Mathf.Atan2(closestWalkerDirection.y, closestWalkerDirection.x) * Mathf.Rad2Deg - 90f;
                 Quaternion lookRotation = Quaternion.AngleAxis(angle, Vector3.forward);
