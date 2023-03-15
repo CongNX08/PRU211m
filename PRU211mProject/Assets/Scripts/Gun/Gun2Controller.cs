@@ -63,7 +63,7 @@ public class Gun2Controller : MonoBehaviour
             foreach (GameObject walker in walkers)
             {
                 float distance = Vector2.Distance(transform.position, walker.transform.position);
-                if (distance < closestDistance && distance <= 10f)
+                if (distance < closestDistance && distance <= 12f)
                 {
                     closestDistance = distance;
                     closestWalkerDirection = (walker.transform.position - transform.position).normalized;
@@ -74,7 +74,7 @@ public class Gun2Controller : MonoBehaviour
             {
                 if (timers.isFinish)
                 {
-                    currentHP -= 2;
+                    currentHP -= 1;
                     float scaleRatio = currentHP / maxHP;
                     if (transform.localScale.x > 0.7f)
                     {

@@ -8,7 +8,8 @@ public class SurvivalController : MonoBehaviour
 {
     Timer timer;
     Survival sv;
-    int curentSize;
+    float curentSize;
+    bool outBo = false;
 
     // Start is called before the first frame update
     void Start()
@@ -26,34 +27,34 @@ public class SurvivalController : MonoBehaviour
     {
         if (timer.isFinish)
         {
-            curentSize -= 1;
+            curentSize -= 0.03f;
             gameObject.transform.localScale = new Vector3(curentSize, curentSize, 1f);
 
-            timer.arlarmTime = 0.1f;
+            timer.arlarmTime = 0.01f;
             timer.StartTime();
 
         }
-        if(curentSize <= 20f)
+        if(curentSize <= 20f )
         {
-            Destroy(gameObject);
+            outBo = false;           
+            Destroy(gameObject,0.1f);
         }
     }
-
-    //private void OnCollisionExit2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Player"))
-    //    {
-    //        Destroy(collision.gameObject);
-    //    }
-    //}
     
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.CompareTag("Player")) 
+        {
+            outBo = true; 
+        }
+        if(outBo == true)
         {
             Destroy(collision.gameObject);
             Time.timeScale = 0;
         }
+      
+       
+
     }
 
 

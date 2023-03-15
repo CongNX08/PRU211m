@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Survival : MonoBehaviour
 {
-    public GameObject ball;
+    public GameObject Bo;
     Timer timer;
-    public int size;
+    public float size;
     private Vector3 initialScale;
     // Start is called before the first frame update
     void Start()
@@ -22,8 +22,8 @@ public class Survival : MonoBehaviour
     {
         if (timer.isFinish)
         {
-            BallSpawn();
-            timer.arlarmTime = 15;
+            BoSpawn();
+            timer.arlarmTime = 90;
             timer.StartTime();
 
         }
@@ -42,12 +42,12 @@ public class Survival : MonoBehaviour
         return bounds;
     }
 
-    public void BallSpawn()
+    public void BoSpawn()
     {
         Bounds bounds = OrthographicBounds(Camera.main);
         Vector2 spawnPos = new Vector2(Random.Range(bounds.min.x, bounds.max.x), Random.Range(bounds.min.y, bounds.max.y));
-        GameObject obj = Instantiate(ball, spawnPos, Quaternion.identity);
-         size = Random.Range(50, 100);
+        GameObject obj = Instantiate(Bo, spawnPos, Quaternion.identity);
+        size = 110f;
         obj.transform.localScale = new Vector3(size, size, 1f);
     }
 

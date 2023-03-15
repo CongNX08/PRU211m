@@ -56,7 +56,7 @@ public class Gun1Controller : MonoBehaviour
             foreach (GameObject walker in walkers)
             {
                 float distance = Vector2.Distance(transform.position, walker.transform.position);
-                if (distance < closestDistance && distance <= 10f)
+                if (distance < closestDistance && distance <= 12f)
                 {
                     closestDistance = distance;               
                 }
@@ -78,7 +78,7 @@ public class Gun1Controller : MonoBehaviour
                 if(currentHP <= 0)
                 {
                     Destroy(gameObject);
-                    sg.currentGun --;
+                    sg.currentGun--;
                 }
 
             }

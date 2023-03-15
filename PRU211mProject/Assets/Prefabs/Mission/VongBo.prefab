@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7086519489252696169}
   - component: {fileID: 7154054751610751071}
   - component: {fileID: 3311211337813163412}
-  - component: {fileID: 1715759380882120381}
   - component: {fileID: 1461298298899077140}
+  - component: {fileID: 2391036515094354974}
   m_Layer: 0
   m_Name: VongBo
   m_TagString: Untagged
@@ -125,18 +125,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &1715759380882120381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 749376613657579822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffd829bcdf84be444b279e63cf79adbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1461298298899077140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,3 +141,15 @@ MonoBehaviour:
   isFinish: 0
   elapseTime: 0
   arlarmTime: 0
+--- !u!114 &2391036515094354974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749376613657579822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd829bcdf84be444b279e63cf79adbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

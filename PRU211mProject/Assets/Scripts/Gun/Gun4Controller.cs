@@ -63,7 +63,7 @@ public class Gun4Controller : MonoBehaviour
             foreach (GameObject walker in walkers)
             {
                 float distance = Vector2.Distance(transform.position, walker.transform.position);
-                if (distance < closestDistance && distance <= 10f)
+                if (distance < closestDistance && distance <= 12f)
                 {
                     closestDistance = distance;
                     closestWalkerDirection = (walker.transform.position - transform.position).normalized;
