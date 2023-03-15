@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    int heal = 6;
+    int heal;
+    HealthController ec;
     // Start is called before the first frame update
     void Start()
     {
-        
+        ec = FindObjectOfType<HealthController>();
+        heal = ec.maxHp;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -21,10 +23,11 @@ public class EnemyController : MonoBehaviour
             Destroy(collision.gameObject);
             if (heal <= 0)
             {
+                ec.hpIc();
                 Destroy(gameObject);
                 scoreManager.instance.AddPoint();
             }
-      
+
         }
 
         //bullet2
@@ -35,6 +38,7 @@ public class EnemyController : MonoBehaviour
             Destroy(collision.gameObject);
             if (heal <= 0)
             {
+                ec.hpIc();
                 Destroy(gameObject);
                 scoreManager.instance.AddPoint();
             }
@@ -48,6 +52,7 @@ public class EnemyController : MonoBehaviour
             Destroy(collision.gameObject);
             if (heal <= 0)
             {
+                ec.hpIc();
                 Destroy(gameObject);
 
             }
@@ -61,6 +66,7 @@ public class EnemyController : MonoBehaviour
             Destroy(collision.gameObject);
             if (heal <= 0)
             {
+                ec.hpIc();
                 Destroy(gameObject);
                 scoreManager.instance.AddPoint();
             }
@@ -73,19 +79,17 @@ public class EnemyController : MonoBehaviour
             Destroy(collision.gameObject);
             if (heal <= 0)
             {
+                ec.hpIc();
                 Destroy(gameObject);
                 scoreManager.instance.AddPoint();
             }
 
         }
-
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
 

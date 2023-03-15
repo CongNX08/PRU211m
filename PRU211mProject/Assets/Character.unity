@@ -1240,7 +1240,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df7918b7c55cd21429f39c08fd921063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enermy: {fileID: 4562883570856944681, guid: 54c804557ab53e34d86f15a87d4d0bc1, type: 3}
+  enemyPreFab: {fileID: 4562883570856944681, guid: 54c804557ab53e34d86f15a87d4d0bc1, type: 3}
+  bossPrefab: {fileID: 883983341849888115, guid: c569eae390b96d244a58989596c77ec8, type: 3}
+--- !u!114 &1619176631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619176626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9280a058e76a4fc4b9e665251c14b84d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 1
 --- !u!1 &1665733383
 GameObject:
   m_ObjectHideFlags: 0
