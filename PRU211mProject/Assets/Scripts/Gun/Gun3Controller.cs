@@ -26,17 +26,17 @@ public class Gun3Controller : MonoBehaviour
 
         if (radius == 1)
         {
-            maxHP = Random.Range(5, 10);
+            maxHP = Random.Range(5, 11);
             currentHP = maxHP;
         }
         if (radius == 2)
         {
-            maxHP = Random.Range(11, 21);
+            maxHP = Random.Range(11, 16);
             currentHP = maxHP;
         }
         if (radius == 3)
         {
-            maxHP = Random.Range(21, 31);
+            maxHP = Random.Range(16, 21);
             currentHP = maxHP;
         }
     }
@@ -61,25 +61,25 @@ public class Gun3Controller : MonoBehaviour
             foreach (GameObject walker in walkers)
             {
                 float distance = Vector2.Distance(transform.position, walker.transform.position);
-                if (distance < closestDistance && distance <= 10f)
+                if (distance < closestDistance && distance <= 12f)
                 {
                     closestDistance = distance;
                     closestWalkerDirection = (walker.transform.position - transform.position).normalized;
 
                 }
             }
-            if (closestDistance <= 10f)
+            if (closestDistance <= 12f)
             {
                 if (timers.isFinish)
                 {
-                    currentHP -= 2;
+                    currentHP -= 1;
                     float scaleRatio = currentHP / maxHP;
                     if (transform.localScale.x > 0.7f)
                     {
                         transform.localScale = initialScale * scaleRatio;
                     }
 
-                    timers.arlarmTime = 0.5f;
+                    timers.arlarmTime = 0.2f;
                     timers.StartTime();
                 }
                 if (currentHP == 0)

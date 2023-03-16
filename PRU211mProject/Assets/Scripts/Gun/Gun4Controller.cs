@@ -63,14 +63,14 @@ public class Gun4Controller : MonoBehaviour
             foreach (GameObject walker in walkers)
             {
                 float distance = Vector2.Distance(transform.position, walker.transform.position);
-                if (distance < closestDistance && distance <= 10f)
+                if (distance < closestDistance && distance <= 12f)
                 {
                     closestDistance = distance;
                     closestWalkerDirection = (walker.transform.position - transform.position).normalized;
 
                 }
             }
-            if (closestDistance <= 10f)
+            if (closestDistance <= 12f)
             {
                 if (timers.isFinish)
                 {
@@ -81,7 +81,7 @@ public class Gun4Controller : MonoBehaviour
                         transform.localScale = initialScale * scaleRatio;
                     }
 
-                    timers.arlarmTime = 0.5f;
+                    timers.arlarmTime = 0.2f;
                     timers.StartTime();
                 }
                 if (currentHP <= 0)

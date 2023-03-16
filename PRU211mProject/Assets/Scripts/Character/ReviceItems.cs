@@ -59,22 +59,29 @@ public class ReviceItems : MonoBehaviour
                 immortalTime();
             }
         }
-        if (checkStone == 2)
+        if (checkStone == 2 && checkCountStone == 1)
         {
             timeStoneExit += Time.deltaTime;
             if (timeStoneExit < timeDelayStone) return;
             else
             {
                 timeStoneExit = 0;
-                if (checkCountStone <= 1)
-                {
-                    ReciveStone(5f);
-                }
-                else if(checkCountStone ==2)
-                {
-                     ReciveStone(10f);
-                }
+                ReciveStone(5f);
                 checkStone = 1;
+                checkCountStone = 0;
+            }
+
+        }
+        if (checkStone == 2 && checkCountStone >= 2)
+        {
+            timeStoneExit += Time.deltaTime;
+            if (timeStoneExit < timeDelayStone) return;
+            else
+            {
+                timeStoneExit = 0;
+                js.setSpeed(10);
+                checkStone = 1;
+                checkCountStone = 0;
             }
 
         }
@@ -98,11 +105,19 @@ public class ReviceItems : MonoBehaviour
     }
     public virtual void ReciveStone(float spUp)
     {
-        totalSpeed = js.getSpeed();
-        totalSpeed += spUp;
-        js.setSpeed(totalSpeed);
-        checkStone = 2;
-        checkCountStone ++;
+        checkCountStone++;
+        if (checkCountStone >= 3)
+        {
+            js.setSpeed(0);
+            // return;
+        }
+        else
+        {
+            totalSpeed = js.getSpeed();
+            totalSpeed += spUp;
+            js.setSpeed(totalSpeed);
+            checkStone = 2;
+        }
     }
     public virtual void ReciveItemArmor(bool armor)
     {

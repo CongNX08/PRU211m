@@ -21,8 +21,7 @@ public class coliderStone : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             ReviceItems ri = other.GetComponent<ReviceItems>();
-            ri.ReciveStone(-2.5f);
-            Debug.Log("đã va chạm");
+            ri.ReciveStone(-5f);
             Destroy(gameObject);
         }
     }   
