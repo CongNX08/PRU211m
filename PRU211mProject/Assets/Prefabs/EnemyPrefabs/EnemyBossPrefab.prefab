@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 1709469712555833084}
   - component: {fileID: 1338866491739009341}
   - component: {fileID: 6066117565487360934}
+  - component: {fileID: 7026712949970449815}
+  - component: {fileID: 1834296634081498854}
   m_Layer: 0
   m_Name: EnemyBossPrefab
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,3 +125,33 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &7026712949970449815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883983341849888115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06153ed5eed795c4bb8a4f9a673ed803, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 3965313970454588761, guid: 701bd4660d87dfc41a5e6178722bd429, type: 3}
+  timeSpawnBullet: 0
+  timeDlaybullet: 0.5
+--- !u!114 &1834296634081498854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883983341849888115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ebb432a1f15c3846bd462b9073d39d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  timeIcSpeed: 0
+  timeIcDelaySpeed: 30

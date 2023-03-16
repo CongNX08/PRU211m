@@ -24,17 +24,17 @@ public class Gun3Controller : MonoBehaviour
         initialScale = transform.localScale;
         radius = (int)gameObject.transform.localScale.x;
 
-        if (radius == 1)
+        if (radius == 2)
         {
             maxHP = Random.Range(5, 11);
             currentHP = maxHP;
         }
-        if (radius == 2)
+        if (radius == 3)
         {
             maxHP = Random.Range(11, 16);
             currentHP = maxHP;
         }
-        if (radius == 3)
+        if (radius == 4)
         {
             maxHP = Random.Range(16, 21);
             currentHP = maxHP;
@@ -74,7 +74,7 @@ public class Gun3Controller : MonoBehaviour
                 {
                     currentHP -= 1;
                     float scaleRatio = currentHP / maxHP;
-                    if (transform.localScale.x > 0.7f)
+                    if (transform.localScale.x >= 1f)
                     {
                         transform.localScale = initialScale * scaleRatio;
                     }

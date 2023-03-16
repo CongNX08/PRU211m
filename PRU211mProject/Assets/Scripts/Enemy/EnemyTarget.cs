@@ -5,6 +5,10 @@ using UnityEngine;
 public class EnemyTarget : MonoBehaviour
 {
     // Start is called before the first frame update
+   // public GameObject character;
+    public float speed = 5; 
+    public float timeIcSpeed=0; 
+    public float timeIcDelaySpeed=30; 
     // public GameObject character;
 
     void Start()
@@ -15,19 +19,15 @@ public class EnemyTarget : MonoBehaviour
     void Update()
     {
         GameObject walkers = GameObject.FindWithTag("Player");
-
         Vector3 distance = walkers.transform.position - transform.position;
         Vector3 targetPoint = walkers.transform.position - distance.normalized * 1;
-        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, targetPoint, 1 * Time.deltaTime);
+        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, targetPoint, speed * Time.deltaTime);
 
-    }
-        private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            // ReviceItems ri = other.GetComponent<ReviceItems>();
-            // ri.ReciveItemSpeedUp(5f);
-            Destroy(gameObject);
+        timeIcSpeed += Time.deltaTime; 
+        if(timeIcSpeed <timeIcDelaySpeed) return;
+        else{
+            speed += 0.5f;
+            timeIcSpeed =0;
         }
     }
 }
