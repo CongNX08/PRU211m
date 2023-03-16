@@ -5,6 +5,7 @@ using UnityEngine;
 public class HealthController : MonoBehaviour
 {
     public int maxHp=1;
+    public int maxHpBoss;
     void Start()
     {
         
@@ -17,5 +18,8 @@ public class HealthController : MonoBehaviour
     }
    public void hpIc(){
         maxHp++;
+    }
+    public void maxboss(){
+        maxHpBoss = maxHp*2;
     }
 }
