@@ -9,9 +9,10 @@ public class EnemyTarget : MonoBehaviour
     public float speed = 5; 
     public float timeIcSpeed=0; 
     public float timeIcDelaySpeed=30; 
+    // public GameObject character;
+
     void Start()
     {
-        
     }
 
     // Update is called once per frame

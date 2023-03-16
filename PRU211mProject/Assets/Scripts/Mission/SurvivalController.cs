@@ -10,6 +10,7 @@ public class SurvivalController : MonoBehaviour
     Survival sv;
     float curentSize;
     bool outBo = false;
+    MenuEvent me;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class SurvivalController : MonoBehaviour
         sv = FindObjectOfType<Survival>();
 
         curentSize = sv.size;
+        me = FindObjectOfType<MenuEvent>();
     }
 
     // Update is called once per frame
@@ -49,7 +51,7 @@ public class SurvivalController : MonoBehaviour
         }
         if(outBo == true)
         {
-            Destroy(collision.gameObject);
+            me.ShowGameoverPanel(true);
             Time.timeScale = 0;
         }
       

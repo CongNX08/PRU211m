@@ -23,9 +23,11 @@ public class ReviceItems : MonoBehaviour
     public float timeStoneExit = 0;
     public float timeDelayStone = 5;
     public int checkCountStone = 0;
+    MenuEvent me;
     void Start()
     {
         js = FindObjectOfType<joystickCharacter>();
+        me = FindObjectOfType<MenuEvent>();
     }
     void Awake()
     {
@@ -134,7 +136,8 @@ public class ReviceItems : MonoBehaviour
             }
             else
             {
-                Destroy(gameObject);
+                me.ShowGameoverPanel(true);
+                Time.timeScale = 0;
             }
         }
     }
