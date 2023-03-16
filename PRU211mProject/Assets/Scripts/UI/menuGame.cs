@@ -17,12 +17,12 @@ public class menuGame : MonoBehaviour
 
     public void PlayGame()
     {
-        SpanwItems.SetActive(true);
-        SpawnGun.SetActive(true);
-        SpawnEnemy.SetActive(true);
-        GenerateStones.SetActive(true);
-        Time.timeScale = 1;
-        text.SetActive(false);
+        //    SpanwItems.SetActive(true);
+        //    SpawnGun.SetActive(true);
+        //    SpawnEnemy.SetActive(true);
+        //    GenerateStones.SetActive(true);
+        //    Time.timeScale = 1;
+        //    text.SetActive(false);
     }
 
     public void PauseGame()

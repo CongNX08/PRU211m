@@ -15,7 +15,7 @@ public class SpawnEnemy : MonoBehaviour
     protected float timeDlayCount = 15f;
     protected float timeSpawnBoss= 0f;
     protected float timeDlayBoss = 30f;
-    // public int totalEnemy = 5;
+    private int totalEnemy =0;
 
     private void Start()
     {
@@ -25,14 +25,16 @@ public class SpawnEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // timeCount+= Time.deltaTime; 
-        // if(timeCount<timeDlayCount) return;
-        // else{
-        //     totalEnemy++;
-        //     timeCount =0;
-        // }
         this.Spawns();
         this.CheckMinionDeath();
+        this.SpawnBoss();
+        timeCount+= Time.deltaTime; 
+        if(timeCount<timeDlayCount) return;
+        else{
+            totalEnemy++;
+            timeCount =0;
+        }
+
     }
     private void Spawns()
     {
