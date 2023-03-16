@@ -41,6 +41,7 @@ public class MenuEvent : MonoBehaviour
 
     public void ExitPanel(int index)
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(index);
     }
 }
