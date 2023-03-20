@@ -12,7 +12,11 @@ public class BanDan : MonoBehaviour
     public GameObject bullet4;
     private float bulletSpeed = 12f;
     Timer timers;
-   
+    [SerializeField]
+    public AudioSource soundGun1;
+    public AudioSource soundGun2;
+    public AudioSource soundGun3;
+    public AudioSource soundGun4;
 
 
 
@@ -62,6 +66,7 @@ public class BanDan : MonoBehaviour
                 {
                    
                     GameObject bullet = Instantiate(bullet1, transform.position, transform.rotation);
+                    soundGun1.Play();
                     bullet.GetComponent<Rigidbody2D>().velocity = closestWalkerDirection * bulletSpeed;
                     timers.arlarmTime = 0.2f;
                     timers.StartTime();
@@ -83,6 +88,7 @@ public class BanDan : MonoBehaviour
                 {
 
                     GameObject bullet = Instantiate(bullet2, transform.position, transform.rotation);
+                    soundGun2.Play();
                     bullet.GetComponent<Rigidbody2D>().velocity = closestWalkerDirection * bulletSpeed;
                     timers.arlarmTime = 0.2f;
                     timers.StartTime();
@@ -112,9 +118,10 @@ public class BanDan : MonoBehaviour
                     GameObject b2 = Instantiate(bullet3, transform.position, transform.rotation);
                     GameObject b3 = Instantiate(bullet3, transform.position, transform.rotation);
                     b1.GetComponent<Rigidbody2D>().velocity = closestWalkerDirection * bulletSpeed;
+                    soundGun3.Play();
                     b2.GetComponent<Rigidbody2D>().velocity = rotation1 * closestWalkerDirection * bulletSpeed;
                     b3.GetComponent<Rigidbody2D>().velocity = rotation2 * closestWalkerDirection * bulletSpeed;
-                    timers.arlarmTime = 0.2f;
+                    timers.arlarmTime = 0.3f;
                     timers.StartTime();
                 }
 
@@ -134,13 +141,15 @@ public class BanDan : MonoBehaviour
                 {
 
                     GameObject bullet = Instantiate(bullet4, transform.position, transform.rotation);
+                    soundGun4.Play();
                     bullet.GetComponent<Rigidbody2D>().velocity = closestWalkerDirection * bulletSpeed;
-                    timers.arlarmTime = 0.2f;
+                    timers.arlarmTime = 0.4f;
                     timers.StartTime();
                 }
 
             }
         }
+     
     }
 
 
