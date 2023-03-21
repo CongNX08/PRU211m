@@ -5,6 +5,7 @@ using UnityEngine;
 public class CollectStarController : MonoBehaviour
 {
     BanDan bd;
+    public AudioSource soundStar;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,8 +27,9 @@ public class CollectStarController : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            soundStar.Play();
             bd.attackSpeed = bd.attackSpeed * 0.5f;
-            Destroy(gameObject);
+            Destroy(gameObject, 0.4f);
         }
     }
 }

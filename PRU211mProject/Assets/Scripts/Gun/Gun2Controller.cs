@@ -76,7 +76,7 @@ public class Gun2Controller : MonoBehaviour
                 {
                     currentHP -= 1;
                     float scaleRatio = currentHP / maxHP;
-                    if (transform.localScale.x >= 1f)
+                    if (transform.localScale.x >= 1.5f)
                     {
                         transform.localScale = initialScale * scaleRatio;
                     }
