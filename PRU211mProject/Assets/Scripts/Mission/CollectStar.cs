@@ -10,7 +10,7 @@ public class CollectStar : MonoBehaviour
     void Start()
     {
         timer = GetComponent<Timer>();
-        timer.arlarmTime = 1;
+        timer.arlarmTime = 20;
         timer.StartTime();
         
     }
@@ -21,14 +21,11 @@ public class CollectStar : MonoBehaviour
         if (timer.isFinish)
         {
             StarSpawn();
-            timer.arlarmTime = 30;
+            timer.arlarmTime = 20;
             timer.StartTime();
 
         }
-        //if (transform.localScale.x > 0.7f)
-        //{
-        //    transform.localScale = initialScale * scaleRatio;
-        //}
+      
     }
     private Bounds OrthographicBounds(Camera camera)
     {
@@ -43,7 +40,7 @@ public class CollectStar : MonoBehaviour
     public void StarSpawn()
     {
         Bounds bounds = OrthographicBounds(Camera.main);
-        Vector2 spawnPos = new Vector2(Random.Range(bounds.min.x, bounds.max.x), Random.Range(bounds.min.y, bounds.max.y));
+        Vector2 spawnPos = new Vector2(Random.Range( bounds.min.x,  bounds.max.x), Random.Range( bounds.min.y, bounds.max.y));
         GameObject obj = Instantiate(Star, spawnPos, Quaternion.identity);
     }
 }
