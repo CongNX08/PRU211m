@@ -11,6 +11,7 @@ public class BanDan : MonoBehaviour
     public GameObject bullet3;
     public GameObject bullet4;
     private float bulletSpeed = 12f;
+    public float attackSpeed =0.2f;
     Timer timers;
     [SerializeField]
     public AudioSource soundGun1;
@@ -68,7 +69,7 @@ public class BanDan : MonoBehaviour
                     GameObject bullet = Instantiate(bullet1, transform.position, transform.rotation);
                     soundGun1.Play();
                     bullet.GetComponent<Rigidbody2D>().velocity = closestWalkerDirection * bulletSpeed;
-                    timers.arlarmTime = 0.2f;
+                    timers.arlarmTime = attackSpeed;
                     timers.StartTime();
                 }
                
@@ -90,7 +91,7 @@ public class BanDan : MonoBehaviour
                     GameObject bullet = Instantiate(bullet2, transform.position, transform.rotation);
                     soundGun2.Play();
                     bullet.GetComponent<Rigidbody2D>().velocity = closestWalkerDirection * bulletSpeed;
-                    timers.arlarmTime = 0.2f;
+                    timers.arlarmTime = attackSpeed;
                     timers.StartTime();
                 }
 
@@ -121,7 +122,7 @@ public class BanDan : MonoBehaviour
                     soundGun3.Play();
                     b2.GetComponent<Rigidbody2D>().velocity = rotation1 * closestWalkerDirection * bulletSpeed;
                     b3.GetComponent<Rigidbody2D>().velocity = rotation2 * closestWalkerDirection * bulletSpeed;
-                    timers.arlarmTime = 0.3f;
+                    timers.arlarmTime = (attackSpeed + 0.2f);
                     timers.StartTime();
                 }
 
@@ -143,7 +144,7 @@ public class BanDan : MonoBehaviour
                     GameObject bullet = Instantiate(bullet4, transform.position, transform.rotation);
                     soundGun4.Play();
                     bullet.GetComponent<Rigidbody2D>().velocity = closestWalkerDirection * bulletSpeed;
-                    timers.arlarmTime = 0.4f;
+                    timers.arlarmTime = (attackSpeed + 0.2f);
                     timers.StartTime();
                 }
 
