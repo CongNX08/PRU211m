@@ -7,7 +7,7 @@ public class EnemyBossControler : MonoBehaviour
     int heal;
     float rotationSpeed = 5f;
     public GameObject bulletPrefab;
-    private float bulletSpeed = 15f;
+    private float bulletSpeed = 10f;
     HealthController ec;
     public float timeSpawnBullet = 0f;
     public float timeDlaybullet = 0.5f;
