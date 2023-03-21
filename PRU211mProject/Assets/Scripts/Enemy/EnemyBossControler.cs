@@ -31,7 +31,7 @@ public class EnemyBossControler : MonoBehaviour
             {
                 ec.maxboss();
                 Destroy(gameObject);
-                scoreManager.instance.AddPoint();
+                scoreManager.instance.AddPointBoss();
             }
 
         }
@@ -47,7 +47,7 @@ public class EnemyBossControler : MonoBehaviour
             {
                 ec.maxboss();
                 Destroy(gameObject);
-                scoreManager.instance.AddPoint();
+                scoreManager.instance.AddPointBoss();
             }
 
         }
@@ -62,7 +62,7 @@ public class EnemyBossControler : MonoBehaviour
             {
                 ec.maxboss();
                 Destroy(gameObject);
-
+                scoreManager.instance.AddPointBoss();
             }
 
         }
@@ -77,7 +77,7 @@ public class EnemyBossControler : MonoBehaviour
             {
                 ec.maxboss();
                 Destroy(gameObject);
-                scoreManager.instance.AddPoint();
+                scoreManager.instance.AddPointBoss();
             }
 
         }
@@ -91,7 +91,7 @@ public class EnemyBossControler : MonoBehaviour
             {
                 ec.maxboss();
                 Destroy(gameObject);
-                scoreManager.instance.AddPoint();
+                scoreManager.instance.AddPointBoss();
             }
 
         }
