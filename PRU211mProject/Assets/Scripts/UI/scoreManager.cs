@@ -34,6 +34,14 @@ public class scoreManager : MonoBehaviour
         PlayerPrefs.SetInt("highscore", score);
     }
 
+    public void AddPointBoss()
+    {
+        score += 10;
+        scoreText.text = score.ToString() + " POINTS";
+        if (highscore < score)
+            PlayerPrefs.SetInt("highscore", score);
+    }
+
     // Update is called once per frame
     void Update()
     {
