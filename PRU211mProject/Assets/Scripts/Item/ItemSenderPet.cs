@@ -15,7 +15,7 @@ public class ItemSenderPet : MonoBehaviour
     float timeDestroy = 0;
     float arlarmTimeDestroy = 30;
     Timer timer;
-    public AudioSource soundPet;
+   
     void Start()
     {
         timer = GetComponent<Timer>();
@@ -40,7 +40,7 @@ public class ItemSenderPet : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            soundPet.Play();
+      
             isTarget = true;
         }
     }

@@ -27,10 +27,7 @@ public class Survival : MonoBehaviour
             timer.StartTime();
 
         }
-        //if (transform.localScale.x > 0.7f)
-        //{
-        //    transform.localScale = initialScale * scaleRatio;
-        //}
+  
     }
     private Bounds OrthographicBounds(Camera camera)
     {

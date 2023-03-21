@@ -19,6 +19,7 @@ public class SpawnGun : MonoBehaviour
     GameObject GunX;
     public int maxGun = 5;
     public int currentGun = 0;
+    public float timePlay;
 
     float P1;
     float P2;
@@ -37,10 +38,22 @@ public class SpawnGun : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        P1 = -0.3333f * Time.time + 50;
-        P2 = P1 + 30;
-        P3 = P2 + 0.1666f * Time.time + 15;
-        P4 = P3 + 0.1666f * Time.time + 5;
+        timePlay = Time.time;
+        if(timePlay <= 120)
+        {
+            P1 = -0.3333f * Time.time + 50;
+            P2 = P1 + 30;
+            P3 = P2 + 0.1666f * Time.time + 15;
+            P4 = P3 + 0.1666f * Time.time + 5;
+
+        }
+        else if ( timePlay > 120)
+        {
+            P1 = 10;
+            P2 = 30;
+            P3 = 35;
+            P4 = 25;
+        }
 
 
 

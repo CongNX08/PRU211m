@@ -30,6 +30,7 @@ public class EnemyController : MonoBehaviour
             {
                 ec.hpIc();
                 Destroy(gameObject);
+                StartExplosion();
                 scoreManager.instance.AddPoint();
             }
 

@@ -10,7 +10,7 @@ public class CollectStar : MonoBehaviour
     void Start()
     {
         timer = GetComponent<Timer>();
-        timer.arlarmTime = 20;
+        timer.arlarmTime = 15f;
         timer.StartTime();
         
     }
@@ -21,7 +21,7 @@ public class CollectStar : MonoBehaviour
         if (timer.isFinish)
         {
             StarSpawn();
-            timer.arlarmTime = 20;
+            timer.arlarmTime = 15f;
             timer.StartTime();
 
         }
