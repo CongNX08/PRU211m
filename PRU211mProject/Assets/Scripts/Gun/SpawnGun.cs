@@ -73,7 +73,6 @@ public class SpawnGun : MonoBehaviour
         float X = Random.Range(bounds.min.x, bounds.max.x);
         float Y = Random.Range(bounds.min.y, bounds.max.y);
         int random = Random.Range(0, 101);
-        Debug.Log(random);
         if (random <= P1)
         {
             GunX = Gun1;
@@ -92,7 +91,7 @@ public class SpawnGun : MonoBehaviour
             GunX = Gun4;
         }
         GameObject obj = Instantiate(GunX, new Vector2(X, Y), Quaternion.identity);
-        int size = Random.Range(1, 4);
+        int size = Random.Range(2, 5);
         obj.transform.localScale = new Vector3(size, size, 1f);
        
 

@@ -7,6 +7,7 @@ public class ItemSenderArmor : MonoBehaviour
     // Start is called before the first frame update
     Timer timer;
     // public List<GameObject> items;
+    public AudioSource soundArmor;
     void Start()
     {
         timer = GetComponent<Timer>();
@@ -23,10 +24,11 @@ public class ItemSenderArmor : MonoBehaviour
         }
     }
      private void OnTriggerEnter2D(Collider2D other) {
-        if(other.gameObject.CompareTag("Player")){ 
+        if(other.gameObject.CompareTag("Player")){
+            soundArmor.Play();
             ReviceItems ri = other.GetComponent<ReviceItems>();
-            ri.ReciveItemArmor(true);
-            Destroy(gameObject);
+            ri.ReciveItemArmor(true); 
+            Destroy(gameObject, 0.4f);
         }
     }
 }

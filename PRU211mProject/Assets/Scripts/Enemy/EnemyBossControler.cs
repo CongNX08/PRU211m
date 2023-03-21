@@ -7,14 +7,17 @@ public class EnemyBossControler : MonoBehaviour
     int heal;
     float rotationSpeed = 5f;
     public GameObject bulletPrefab;
-    private float bulletSpeed = 15f;
+    private float bulletSpeed = 10f;
     HealthController ec;
     public float timeSpawnBullet = 0f;
     public float timeDlaybullet = 0.5f;
+      HPEnemyUI hpUI;
     void Start()
     {
         ec = FindObjectOfType<HealthController>();
         heal = ec.maxHp;
+          hpUI = FindObjectOfType<HPEnemyUI>();
+        hpUI.SetHPText("" + heal);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -22,13 +25,13 @@ public class EnemyBossControler : MonoBehaviour
         if (collision.CompareTag("Bullet1"))
         {
             heal--;
-
+            hpUI.SetHPText("" + heal);
             Destroy(collision.gameObject);
             if (heal <= 0)
             {
                 ec.maxboss();
                 Destroy(gameObject);
-                scoreManager.instance.AddPoint();
+                scoreManager.instance.AddPointBoss();
             }
 
         }
@@ -37,13 +40,14 @@ public class EnemyBossControler : MonoBehaviour
         if (collision.CompareTag("Bullet2"))
         {
             heal -= 2;
+             hpUI.SetHPText("" + heal);
 
             Destroy(collision.gameObject);
             if (heal <= 0)
             {
                 ec.maxboss();
                 Destroy(gameObject);
-                scoreManager.instance.AddPoint();
+                scoreManager.instance.AddPointBoss();
             }
 
         }
@@ -51,13 +55,14 @@ public class EnemyBossControler : MonoBehaviour
         if (collision.CompareTag("Bullet3"))
         {
             heal -= 3;
+             hpUI.SetHPText("" + heal);
 
             Destroy(collision.gameObject);
             if (heal <= 0)
             {
                 ec.maxboss();
                 Destroy(gameObject);
-
+                scoreManager.instance.AddPointBoss();
             }
 
         }
@@ -65,26 +70,28 @@ public class EnemyBossControler : MonoBehaviour
         if (collision.CompareTag("Bullet4"))
         {
             heal -= 5;
+             hpUI.SetHPText("" + heal);
 
             Destroy(collision.gameObject);
             if (heal <= 0)
             {
                 ec.maxboss();
                 Destroy(gameObject);
-                scoreManager.instance.AddPoint();
+                scoreManager.instance.AddPointBoss();
             }
 
         }
         if (collision.CompareTag("BulletPet"))
         {
             heal -= 1;
+             hpUI.SetHPText("" + heal);
 
             Destroy(collision.gameObject);
             if (heal <= 0)
             {
                 ec.maxboss();
                 Destroy(gameObject);
-                scoreManager.instance.AddPoint();
+                scoreManager.instance.AddPointBoss();
             }
 
         }

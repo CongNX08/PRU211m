@@ -6,6 +6,7 @@ public class ItemSenderSpeedUp : MonoBehaviour
 {
     // Start is called before the first frame update
     Timer timer;
+    public AudioSource soundSpeed;
     void Start()
     {
         timer = GetComponent<Timer>();
@@ -24,9 +25,10 @@ public class ItemSenderSpeedUp : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            soundSpeed.Play();
             ReviceItems ri = other.GetComponent<ReviceItems>();
-            ri.ReciveItemSpeedUp(5f);
-            Destroy(gameObject);
+            ri.ReciveItemSpeedUp(5f);           
+            Destroy(gameObject,0.4f);
         }
     }
 
