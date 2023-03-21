@@ -12,7 +12,7 @@ public class Survival : MonoBehaviour
     void Start()
     {
         timer = GetComponent<Timer>();
-        timer.arlarmTime = 30;
+        timer.arlarmTime = 20;
         timer.StartTime();
 
     }
@@ -23,7 +23,7 @@ public class Survival : MonoBehaviour
         if (timer.isFinish)
         {
             BoSpawn();
-            timer.arlarmTime = 90;
+            timer.arlarmTime = 60;
             timer.StartTime();
 
         }
@@ -44,7 +44,7 @@ public class Survival : MonoBehaviour
         Bounds bounds = OrthographicBounds(Camera.main);
         Vector2 spawnPos = new Vector2(Random.Range(bounds.min.x, bounds.max.x), Random.Range(bounds.min.y, bounds.max.y));
         GameObject obj = Instantiate(Bo, spawnPos, Quaternion.identity);
-        size = 110f;
+        size = 95f;
         obj.transform.localScale = new Vector3(size, size, 1f);
     }
 

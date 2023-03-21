@@ -17,13 +17,13 @@ public class RandomStones : MonoBehaviour
         if (timer.isFinish)
         {
             spawnBall();
-            timer.arlarmTime = 0.7f;
+            timer.arlarmTime = 1.5f;
             timer.StartTime();
         }
     }
     public void spawnBall()
     {
-        Vector2 spawnPos = new Vector2(Random.Range(-70, 70), 60);
+        Vector2 spawnPos = new Vector2(Random.Range(-70, 80), 60);
         if (stones)
         {
             Instantiate(stones, spawnPos, Quaternion.identity);

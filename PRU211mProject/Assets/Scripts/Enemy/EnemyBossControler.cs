@@ -24,7 +24,7 @@ public class EnemyBossControler : MonoBehaviour
         //bullet1
         if (collision.CompareTag("Bullet1"))
         {
-            heal--;
+            heal -=1;
             hpUI.SetHPText("" + heal);
             Destroy(collision.gameObject);
             if (heal <= 0)
@@ -39,7 +39,7 @@ public class EnemyBossControler : MonoBehaviour
         //bullet2
         if (collision.CompareTag("Bullet2"))
         {
-            heal -= 2;
+            heal -= 4;
              hpUI.SetHPText("" + heal);
 
             Destroy(collision.gameObject);
@@ -69,7 +69,7 @@ public class EnemyBossControler : MonoBehaviour
         //bullet4
         if (collision.CompareTag("Bullet4"))
         {
-            heal -= 5;
+            heal -= 8;
              hpUI.SetHPText("" + heal);
 
             Destroy(collision.gameObject);

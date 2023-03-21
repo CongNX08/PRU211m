@@ -36,7 +36,7 @@ public class SurvivalController : MonoBehaviour
             timer.StartTime();
 
         }
-        if(curentSize <= 20f )
+        if(curentSize <= 35f )
         {
             outBo = false;           
             Destroy(gameObject,0.1f);
