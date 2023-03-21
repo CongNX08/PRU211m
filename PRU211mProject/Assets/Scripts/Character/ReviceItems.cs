@@ -7,6 +7,8 @@ public class ReviceItems : MonoBehaviour
     // Start is called before the first frame update
 
     joystickCharacter js;
+    public new GameObject animation;
+    public new GameObject animationSpeed;
     float totalSpeed;
     private float timeSpeedExit = 0;
     private float timeDlaySpeedExit = 5;
@@ -17,7 +19,7 @@ public class ReviceItems : MonoBehaviour
     private Color startColor = Color.red;
     private Color endColor = Color.black;
     [Range(0, 10)]
-    private float speedBlink = 5;
+    float speedBlink = 9;
     Renderer ren;
     public int checkStone = 1;
     public float timeStoneExit = 0;
@@ -40,12 +42,22 @@ public class ReviceItems : MonoBehaviour
         if (checkSpeed == true)
         {
             this.timeSpeedExit += Time.deltaTime;
-            if (this.timeSpeedExit < this.timeDlaySpeedExit) return;
+            if (this.timeSpeedExit < this.timeDlaySpeedExit)
+            {
+                GameObject ani = Instantiate(animationSpeed, transform.position, Quaternion.identity) as GameObject;
+                Destroy(ani, 0.2f);
+                return;
+            }
             else
             {
                 this.timeSpeedExit = 0;
                 speedReduce();
             }
+        }
+        if (checkArmor == 2)
+        {
+            GameObject ani = Instantiate(animation, transform.position, Quaternion.identity) as GameObject;
+            Destroy(ani, 0.018f);
         }
         if (checkArmor == 3)
         {
@@ -130,7 +142,7 @@ public class ReviceItems : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            if (checkArmor == 2)
+            if (checkArmor == 2 || checkArmor == 3)
             {
                 checkArmor = 3;
             }
