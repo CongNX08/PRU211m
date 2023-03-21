@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
 {
     int heal;
     HealthController ec;
+    public GameObject explosion;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +41,7 @@ public class EnemyController : MonoBehaviour
             {
                 ec.hpIc();
                 Destroy(gameObject);
+                StartExplosion();
                 scoreManager.instance.AddPoint();
             }
 
@@ -54,6 +56,7 @@ public class EnemyController : MonoBehaviour
             {
                 ec.hpIc();
                 Destroy(gameObject);
+                StartExplosion();
                 scoreManager.instance.AddPoint();
             }
 
@@ -68,6 +71,7 @@ public class EnemyController : MonoBehaviour
             {
                 ec.hpIc();
                 Destroy(gameObject);
+                StartExplosion();
                 scoreManager.instance.AddPoint();
             }
 
@@ -81,6 +85,7 @@ public class EnemyController : MonoBehaviour
             {
                 ec.hpIc();
                 Destroy(gameObject);
+                StartExplosion();
                 scoreManager.instance.AddPoint();
             }
 
@@ -90,6 +95,13 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    }
+
+    void StartExplosion()
+    {
+        Instantiate(explosion, transform.position, Quaternion.identity);
+
+
     }
 
 
