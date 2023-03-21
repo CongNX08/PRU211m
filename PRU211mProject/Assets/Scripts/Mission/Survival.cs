@@ -12,7 +12,7 @@ public class Survival : MonoBehaviour
     void Start()
     {
         timer = GetComponent<Timer>();
-        timer.arlarmTime = 3;
+        timer.arlarmTime = 30;
         timer.StartTime();
 
     }
