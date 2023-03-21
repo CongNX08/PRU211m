@@ -567,7 +567,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &373257259
 MonoBehaviour:
@@ -688,7 +688,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 861318728226670532, guid: 2a4cf956aff8f3145a95522875cc7afe, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 861318728226670532, guid: 2a4cf956aff8f3145a95522875cc7afe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1992,7 +1992,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1599689548 stripped
 Transform:
@@ -2890,7 +2890,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2074860341
 MonoBehaviour:
@@ -3040,7 +3040,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2709616065935962567, guid: 87220049f90d6a346b3b7a22fca62053, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2709616065935962567, guid: 87220049f90d6a346b3b7a22fca62053, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3096,16 +3096,24 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4222237590401541704, guid: ba9d0941f3dc54e4a91f4e9c40130f6d, type: 3}
+      propertyPath: animation
+      value: 
+      objectReference: {fileID: 5808976986318559094, guid: 4cae1ecd610032f40a9d5d031f8d82c4, type: 3}
+    - target: {fileID: 4222237590401541704, guid: ba9d0941f3dc54e4a91f4e9c40130f6d, type: 3}
       propertyPath: speedBlink
       value: 6.22
       objectReference: {fileID: 0}
+    - target: {fileID: 4222237590401541704, guid: ba9d0941f3dc54e4a91f4e9c40130f6d, type: 3}
+      propertyPath: animationSpeed
+      value: 
+      objectReference: {fileID: 5283041133149879468, guid: 31ed8a8519a8d594db644226576d3065, type: 3}
     - target: {fileID: 4222237590401541706, guid: ba9d0941f3dc54e4a91f4e9c40130f6d, type: 3}
       propertyPath: Joystick
       value: 
       objectReference: {fileID: 400302489}
     - target: {fileID: 4222237590401541707, guid: ba9d0941f3dc54e4a91f4e9c40130f6d, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4222237590401541707, guid: ba9d0941f3dc54e4a91f4e9c40130f6d, type: 3}
       propertyPath: m_LocalScale.x
@@ -3154,6 +3162,18 @@ PrefabInstance:
     - target: {fileID: 4222237590401541707, guid: ba9d0941f3dc54e4a91f4e9c40130f6d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222237590401541708, guid: ba9d0941f3dc54e4a91f4e9c40130f6d, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222237590401541708, guid: ba9d0941f3dc54e4a91f4e9c40130f6d, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222237590401541708, guid: ba9d0941f3dc54e4a91f4e9c40130f6d, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4222237590401541711, guid: ba9d0941f3dc54e4a91f4e9c40130f6d, type: 3}
       propertyPath: m_Name
