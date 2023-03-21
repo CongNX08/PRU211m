@@ -7,11 +7,14 @@ public class EnemyController : MonoBehaviour
 {
     int heal;
     HealthController ec;
+     HPEnemyUI hpUI;
     // Start is called before the first frame update
     void Start()
     {
         ec = FindObjectOfType<HealthController>();
         heal = ec.maxHp;
+        hpUI = FindObjectOfType<HPEnemyUI>();
+        hpUI.SetHPText("" + heal);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,6 +22,7 @@ public class EnemyController : MonoBehaviour
         if (collision.CompareTag("Bullet1"))
         {
             heal--;
+             hpUI.SetHPText("" + heal);
 
             Destroy(collision.gameObject);
             if (heal <= 0)
@@ -34,6 +38,7 @@ public class EnemyController : MonoBehaviour
         if (collision.CompareTag("Bullet2"))
         {
             heal -= 2;
+             hpUI.SetHPText("" + heal);
 
             Destroy(collision.gameObject);
             if (heal <= 0)
@@ -48,6 +53,7 @@ public class EnemyController : MonoBehaviour
         if (collision.CompareTag("Bullet3"))
         {
             heal -= 3;
+             hpUI.SetHPText("" + heal);
 
             Destroy(collision.gameObject);
             if (heal <= 0)
@@ -62,6 +68,7 @@ public class EnemyController : MonoBehaviour
         if (collision.CompareTag("Bullet4"))
         {
             heal -= 5;
+             hpUI.SetHPText("" + heal);
 
             Destroy(collision.gameObject);
             if (heal <= 0)
@@ -75,6 +82,7 @@ public class EnemyController : MonoBehaviour
         if (collision.CompareTag("BulletPet"))
         {
             heal -= 1;
+             hpUI.SetHPText("" + heal);
 
             Destroy(collision.gameObject);
             if (heal <= 0)
