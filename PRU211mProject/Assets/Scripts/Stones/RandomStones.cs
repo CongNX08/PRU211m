@@ -23,7 +23,7 @@ public class RandomStones : MonoBehaviour
     }
     public void spawnBall()
     {
-        Vector2 spawnPos = new Vector2(Random.Range(-40, 40), 22);
+        Vector2 spawnPos = new Vector2(Random.Range(-70, 70), 60);
         if (stones)
         {
             Instantiate(stones, spawnPos, Quaternion.identity);

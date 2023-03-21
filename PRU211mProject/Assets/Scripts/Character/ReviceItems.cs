@@ -17,7 +17,7 @@ public class ReviceItems : MonoBehaviour
     private Color startColor = Color.red;
     private Color endColor = Color.black;
     [Range(0, 10)]
-    private float speedBlink = 5;
+     float speedBlink =9;
     Renderer ren;
     public int checkStone = 1;
     public float timeStoneExit = 0;
@@ -130,7 +130,7 @@ public class ReviceItems : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            if (checkArmor == 2)
+            if (checkArmor == 2 || checkArmor == 3)
             {
                 checkArmor = 3;
             }
