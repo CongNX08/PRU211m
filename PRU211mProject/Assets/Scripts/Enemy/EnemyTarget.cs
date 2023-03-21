@@ -6,9 +6,9 @@ public class EnemyTarget : MonoBehaviour
 {
     // Start is called before the first frame update
    // public GameObject character;
-    public float speed = 5; 
-    public float timeIcSpeed=0; 
-    public float timeIcDelaySpeed=30; 
+    private float speed = 3.5f; 
+    private float timeIcSpeed=0; 
+    private float timeIcDelaySpeed=30; 
     // public GameObject character;
 
     void Start()
@@ -26,7 +26,7 @@ public class EnemyTarget : MonoBehaviour
         timeIcSpeed += Time.deltaTime; 
         if(timeIcSpeed <timeIcDelaySpeed) return;
         else{
-            speed += 0.5f;
+            speed += 0.25f;
             timeIcSpeed =0;
         }
     }
