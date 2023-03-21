@@ -33,22 +33,22 @@ public class SpawnItems : MonoBehaviour
         if (timer.isFinish)
         {
             int rand = Random.Range(1, 11);
-            // if (rand < 4)
-            // {
+            if (rand < 4)
+            {
                 getItem = itArmor;
-            // }
-            // else if (rand > 3 && rand < 8)
-            // {
-            //     getItem = itSpeedUp;
-            // }
-            // else if (rand > 7 && rand < 11)
-            // {
-            //     getItem = itPet;
-            // }
-            // else
-            // {
-            //     return;
-            // }
+            }
+            else if (rand > 3 && rand < 8)
+            {
+                getItem = itSpeedUp;
+            }
+            else if (rand > 7 && rand < 11)
+            {
+                getItem = itPet;
+            }
+            else
+            {
+                return;
+            }
 
             GameObject item = Instantiate(this.getItem);
             item.transform.position = new Vector2(X, Y);
