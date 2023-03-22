@@ -15,6 +15,7 @@ public class ItemSenderPet : MonoBehaviour
     float timeDestroy = 0;
     float arlarmTimeDestroy = 30;
     Timer timer;
+    public AudioSource soundPet;
    
     void Start()
     {
@@ -75,6 +76,7 @@ public class ItemSenderPet : MonoBehaviour
                 if (timer.isFinish)
                 {
                     GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+                    soundPet.Play();
                     bullet.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletSpeed);
                     Destroy(bullet, 2f);
                     timer.arlarmTime = 0.5f;
