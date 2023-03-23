@@ -13,7 +13,7 @@ public class MenuEvent : MonoBehaviour
     public Button exitPanel;
     public void Play(int index)
     {
-        SceneManager.LoadScene(index);
+        SceneManager.LoadScene("Character");
     }
 
     public void ReStartGame()
@@ -42,6 +42,6 @@ public class MenuEvent : MonoBehaviour
     public void ExitPanel(int index)
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(index);
+        SceneManager.LoadScene("menuUI");
     }
 }

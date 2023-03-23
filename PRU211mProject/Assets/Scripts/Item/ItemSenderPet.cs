@@ -79,7 +79,7 @@ public class ItemSenderPet : MonoBehaviour
                     soundPet.Play();
                     bullet.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletSpeed);
                     Destroy(bullet, 2f);
-                    timer.arlarmTime = 0.5f;
+                    timer.arlarmTime = 0.3f;
                     timer.StartTime();
                 }
                 this.liveTime += Time.deltaTime;
