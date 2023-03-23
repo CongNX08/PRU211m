@@ -16,6 +16,7 @@ TagManager:
   - BulletPet
   - SpawnEnemy
   - Play
+  - BulletBoss
   layers:
   - Default
   - TransparentFX
