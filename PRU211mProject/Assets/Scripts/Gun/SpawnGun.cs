@@ -38,7 +38,7 @@ public class SpawnGun : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        timePlay = Time.time;
+        timePlay = 80;
         if(timePlay <= 120)
         {
             P1 = -0.3333f * Time.time + 50;
@@ -85,7 +85,7 @@ public class SpawnGun : MonoBehaviour
         Bounds bounds = OrthographicBounds(Camera.main);
         float X = Random.Range(bounds.min.x, bounds.max.x);
         float Y = Random.Range(bounds.min.y, bounds.max.y);
-        int random = Random.Range(0, 101);
+        int random = Random.Range(0, 100);
         if (random <= P1)
         {
             GunX = Gun1;
